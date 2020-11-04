@@ -1,6 +1,53 @@
 #addrPage {
     display: inline;
 }
+/* yunji edit below*/
+header {
+    background-color: #f99201;
+    padding: 30px;
+    text-align: center;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 35px;
+    color: white;
+  }
+ 
+instruction{
+    text-align: center;
+  }
+
+  body {
+    font-family: Arial;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px black;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #000000;
+    color: white;
+    font-size: 17px;
+    border: 1px black;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #f99201;
+  }  
+/* yunji edit below */
 
 #categoriesPage {
     display: none;
