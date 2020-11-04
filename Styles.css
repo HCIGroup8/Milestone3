@@ -1,0 +1,23 @@
+#addrPage {
+    display: inline;
+}
+
+#categoriesPage {
+    display: none;
+}
+
+#restaurantsPage {
+    display: none;
+}
+
+#menuPage {
+    display: none;
+}
+
+#cartPage {
+    display: none;
+}
+
+#editItemPage {
+    display: none;
+}
