@@ -68,3 +68,13 @@ instruction{
 #editItemPage {
     display: none;
 }
+
+.cuisineSelector {
+    display: inline-block;
+    /* background-color: #f99201; */
+    padding: 10px;
+}
+
+.cuisineCB {
+    background-color: #f99201;
+}
