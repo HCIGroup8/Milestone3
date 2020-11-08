@@ -4,7 +4,7 @@ var rests = document.getElementById("restaurantsPage");
 var menu = document.getElementById("menuPage");
 var cart = document.getElementById("cartPage");
 
-function catagoriesPageClick() {
+function categoriesPageClick() {
     addr.style.display = "none";
     prefs.style.display = "inline";
 }
