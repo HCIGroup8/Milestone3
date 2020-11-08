@@ -51,6 +51,7 @@ instruction{
 
 #categoriesPage {
   display: none;
+  width: 100%;
 }
 
 #restaurantsPage {
@@ -101,6 +102,10 @@ instruction{
   background-color: #f99201;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .prefContent {
@@ -114,12 +119,10 @@ instruction{
   float: inline-start;
   width: 20%;
   background: #dfdfdf;
-
   text-align: center;
-  display: block;
+  display: grid;
   margin: auto;
 }
-
 
 #prefBack {
   float: left;

@@ -24,7 +24,7 @@
         <form class="example" action="/action_page.php" style="margin:auto;max-width:500px">
             <input type="text" placeholder="Enter your address here" name="enterAddressBar">
             <!-- <button type="submit">Go</button> -->
-            <button type="button" onclick="catagoriesPageClick()">Go</button>
+            <button type="button" onclick="categoriesPageClick()">Go</button>
         </form>
         <br>
         <!-- end of yunji edit-->
@@ -35,7 +35,7 @@
     <!-- Cuisine Categories Page -->
     <div id="categoriesPage">
         <div class="prefHeader">
-            <button id="prefBack" type="button" onclick="">Back</button>
+            <button id="prefBack" type="button" onclick="categoriesPageBack()">Back</button>
             <h1>Cuisine Options</h1>
             <h4>Select the type of cuisine you would like to browse:</h4>
             <button type="button" onclick="resturantsPageClick()">See Restaurants</button>
@@ -92,7 +92,7 @@
     <div id="restaurantsPage">
         <h1>List of restaurants</h1>
         <button type="button">Next</button>
-        <button type="button">Back</button>
+        <button type="button" onclick="restaurantsPageBack()">Back</button>
     </div>
 
     <!-- Menu Page -->
