@@ -35,15 +35,15 @@
     <!-- Cuisine Categories Page -->
     <div id="categoriesPage">
         <div class="prefHeader">
-            <button id="prefBack" type="button" onclick="categoriesPageBack()">Back</button>
+            <button id="prefBack" type="button" onclick="categoriesPageBack()">&larr;</button>
             <h1>Cuisine Options</h1>
             <h4>Select the type of cuisine you would like to browse:</h4>
+            <input type="text" id="prefSearch" onkeyup="myFunction()" placeholder="Search">
             <button type="button" onclick="resturantsPageClick()">See Restaurants</button>
         </div>
 
         <div class="prefContent">
 
-            <input type="text" id="prefSearch" onkeyup="myFunction()" placeholder="Search">
 
             <!-- Cuisine options -->
             <div class="prefRow">
@@ -91,7 +91,7 @@
     <!-- Restaurant Page -->
     <div id="restaurantsPage">
         <h1>List of Restaurants</h1>
-        <button type="button" onclick="restaurantsPageBack();">Back</button>
+        <button type="button" onclick="restaurantsPageBack();">&larr;</button>
         <div class="vertical-menu">
             <a onclick="" id="McDonaldsLink">
                 <img src="./Images/McDonald's_logo.png" width=70px height=70px>
