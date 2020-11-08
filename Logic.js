@@ -9,8 +9,17 @@ function categoriesPageClick() {
     prefs.style.display = "inline";
 }
 
+function categoriesPageBack() {
+    prefs.style.display = "none";
+    addr.style.display = "inline";
+}
 
 function resturantsPageClick() {
     prefs.style.display = "none";
     rests.style.display = "inline";
+}
+
+function restaurantsPageBack() {
+    rests.style.display = "none";
+    prefs.style.display = "inline";
 }

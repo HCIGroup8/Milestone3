@@ -1,6 +1,11 @@
 #addrPage {
     display: inline;
 }
+
+html,body { 
+  height: 100%;
+}
+
 /* yunji edit below*/
 header {
     background-color: #f99201;
@@ -51,6 +56,7 @@ instruction{
 
 #categoriesPage {
   display: none;
+  width: 100%;
 }
 
 #restaurantsPage {
@@ -101,11 +107,16 @@ instruction{
   background-color: #f99201;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .prefContent {
   background-color: #4b4b4b;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 .prefContent input[type=text]{
   padding: 10px;
@@ -114,12 +125,10 @@ instruction{
   float: inline-start;
   width: 20%;
   background: #dfdfdf;
-
   text-align: center;
-  display: block;
+  display: grid;
   margin: auto;
 }
-
 
 #prefBack {
   float: left;
@@ -153,4 +162,8 @@ instruction{
 .vertical-menu a.active {
   background-color: #f99201; /* Add a green color to the "active/current" link */
   color: white;
+}
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #ffc400;
 }
