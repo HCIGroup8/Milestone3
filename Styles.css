@@ -1,6 +1,11 @@
 #addrPage {
     display: inline;
 }
+
+html,body { 
+  height: 100%;
+}
+
 /* yunji edit below*/
 header {
     background-color: #f99201;
@@ -111,6 +116,7 @@ instruction{
 .prefContent {
   background-color: #4b4b4b;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 .prefContent input[type=text]{
   padding: 10px;
