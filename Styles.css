@@ -125,23 +125,32 @@ instruction{
   float: left;
 }
 
+#McDonaldsLink {
 
-/* Resuturant Styles*/
-.btn-group resturantList {
-  background-color: #f99201; /* Green background */
-  border: 1px solid #f99201; /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  width: 50%; /* Set a width if needed */
-  display: block; /* Make the buttons appear below each other */
 }
 
-.btn-group button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
+.vertical-menu {
+  width: 100%; /* Set a width if you like */
+  height: 100%;
 }
 
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #ffc400;
+.vertical-menu a {
+  background-color: #f99201; /* Grey background color */
+  color: white; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  border: 1px solid white; /* Green border */
+  text-decoration: none; /* Remove underline from links */
+  width: 100%;
+  height: 100px;
+  overflow-y: auto;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #f99201; /* Add a green color to the "active/current" link */
+  color: white;
 }
