@@ -50,31 +50,77 @@ instruction{
 /* yunji edit above */
 
 #categoriesPage {
-    display: none;
+  display: none;
 }
 
 #restaurantsPage {
-    display: none;
+  display: none;
 }
 
 #menuPage {
-    display: none;
+  display: none;
 }
 
 #cartPage {
-    display: none;
+  display: none;
 }
 
 #editItemPage {
-    display: none;
+  display: none;
 }
 
-.cuisineSelector {
-    display: inline-block;
-    /* background-color: #f99201; */
-    padding: 10px;
+.prefRow {
+  /* margin: 0 -5px; */
+  margin: 0, 0;
 }
 
-.cuisineCB {
-    background-color: #f99201;
+.prefRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.prefCol {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+.prefCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+
+  background-color: #2E9CCA;
+  height: 100px;
+  font-size: 30px;
+}
+
+.prefHeader {
+  background-color: #f99201;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.prefContent {
+  background-color: #4b4b4b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.prefContent input[type=text]{
+  padding: 10px;
+  font-size: 17px;
+  border: 1px rgb(0, 0, 0);    
+  float: inline-start;
+  width: 20%;
+  background: #dfdfdf;
+
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+
+#prefBack {
+  float: left;
 }

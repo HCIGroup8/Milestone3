@@ -1,74 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        
-        <title>Food Ordering</title>
-        <link rel="stylesheet" href="Styles.css">
-    </head>
-    <body>
 
-        <!-- Address Page -->
-        <div id="addrPage">
+<head>
+    <title>Food Ordering</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
 
-            <!-- yunji edit below-->
-              <header><h1>Food Ordering System</h1></header>
-              
-              <br>
-              <instruction><p>Please Enter your address below:</p></instruction>
-              
-              <form class="example" action="/action_page.php" style="margin:auto;max-width:500px">
-                <input type="text" placeholder="Enter your address here" name="enterAddressBar">
-               <!-- <button type="submit">Go</button> -->
-                <button type="button" onclick="nextPageClick()">Go</button>
-              </form>
-              <br>
-            <!-- end of yunji edit-->
+<body>
 
-           <!-- <button type="button" onclick="nextPageClick()">Next Page</button> -->
-        </div>
+    <!-- Address Page -->
+    <div id="addrPage">
 
-        <!-- Cuisine Categories Page -->
-        <div id="categoriesPage">
-            <h1>Categories page</h1>
+        <!-- yunji edit below-->
+        <header>
+            <h1>Food Ordering System</h1>
+        </header>
+
+        <br>
+        <instruction>
+            <p>Please Enter your address below:</p>
+        </instruction>
+
+        <form class="example" action="/action_page.php" style="margin:auto;max-width:500px">
+            <input type="text" placeholder="Enter your address here" name="enterAddressBar">
+            <!-- <button type="submit">Go</button> -->
+            <button type="button" onclick="nextPageClick()">Go</button>
+        </form>
+        <br>
+        <!-- end of yunji edit-->
+
+        <!-- <button type="button" onclick="nextPageClick()">Next Page</button> -->
+    </div>
+
+    <!-- Cuisine Categories Page -->
+    <div id="categoriesPage">
+        <div class="prefHeader">
+            <button id="prefBack" type="button" onclick="">Back</button>
+            <h1>Cuisine Options</h1>
             <h4>Select the type of cuisine you would like to browse:</h4>
-            <button type="button" onclick="">Next</button>
-            <button type="button">Back</button>
+            <button type="button" onclick="">See Restaurants</button>
+        </div>
 
-            <div class="cuisineSelector">
-                <input class="cuisineCB" type="checkbox" name="mexican" id="prefMexicanCB">
-                <label for="prefMexicanCB">Mexican</label>
+        <div class="prefContent">
 
-                <input type="checkbox" name="italian" id="prefItalianCB">
-                <label for="prefItalianCB">Italian</label>
+            <input type="text" id="prefSearch" onkeyup="myFunction()" placeholder="Search">
+
+            <!-- Cuisine options -->
+            <div class="prefRow">
+                <div class="prefCol">
+                    <div class="prefCard">
+                        <label for="mexicanCB">Mexican</label>
+                        <input type="checkbox" id="mexicanCB" name="mexican">
+                    </div>
+                </div>
+                <div class="prefCol">
+                    <div class="prefCard">
+                        <label for="italianCB">Italian</label>
+                        <input type="checkbox" id="italianCB" name="italian">
+                    </div>
+                </div>
+                <div class="prefCol">
+                    <div class="prefCard">
+                        <label for="fastfoodCB">Fast Food</label>
+                        <input type="checkbox" id="fastfoodCB" name="fastfood">
+                    </div>
+                </div>
+                <div class="prefCol">
+                    <div class="prefCard">
+                        <label for="chickenCB">Chicken</label>
+                        <input type="checkbox" id="chickenCB" name="chicken">
+                    </div>
+                </div>
+                <div class="prefCol">
+                    <div class="prefCard">
+                        <label for="pizzaCB">Pizza</label>
+                        <input type="checkbox" id="pizzaCB" name="pizza">
+                    </div>
+                </div>
+                <div class="prefCol">
+                    <div class="prefCard">
+                        <label for="chineseCB">Chinese</label>
+                        <input type="checkbox" id="chineseCB" name="chinese">
+                    </div>
+                </div>
             </div>
-
-
         </div>
 
-        <!-- Restaurant Page -->
-        <div id="restaurantsPage">
-            <h1>List of restaurants</h1>
-            <button type="button">Next</button>
-            <button type="button">Back</button>
-        </div>
+    </div>
 
-        <!-- Menu Page -->
-        <div id="menuPage">
-            <h1>Restaurant menu</h1>
-            <button type="button">Next</button>
-            <button type="button">Back</button>
-        </div>
+    <!-- Restaurant Page -->
+    <div id="restaurantsPage">
+        <h1>List of restaurants</h1>
+        <button type="button">Next</button>
+        <button type="button">Back</button>
+    </div>
 
-        <!-- Cart -->
-        <div id="cartPage">
-            <h1>Cart</h1>
-        </div>
+    <!-- Menu Page -->
+    <div id="menuPage">
+        <h1>Restaurant menu</h1>
+        <button type="button">Next</button>
+        <button type="button">Back</button>
+    </div>
 
-        <!-- Edit Item -->
-        <div id="editItemPage">
-            <h1>Edit item</h1>
-        </div>
+    <!-- Cart -->
+    <div id="cartPage">
+        <h1>Cart</h1>
+    </div>
 
-    </body>
+    <!-- Edit Item -->
+    <div id="editItemPage">
+        <h1>Edit item</h1>
+    </div>
+
+</body>
+
 </html>
 <script src="Logic.js"></script>
