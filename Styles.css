@@ -135,7 +135,27 @@ instruction{
 }
 
 #McDonaldsLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+}
 
+#BurgerKingLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+}
+
+#AandWLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+}
+
+#DairyQueen {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
 }
 
 .vertical-menu {
