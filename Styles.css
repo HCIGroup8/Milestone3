@@ -85,6 +85,7 @@ instruction{
   top: 0;
   left: 0;
   width: 100%;
+  float: left;
 }
 
 .prefContent {
@@ -97,26 +98,12 @@ instruction{
   font-size: 17px;
   border: 1px rgb(0, 0, 0);    
   float: inline-start;
-  width: 20%;
+  width: 30%;
   background: #dfdfdf;
   text-align: center;
   display: grid;
   margin: auto;
 }
-
-/* .prefCard {
-  display: flex;
-  align-items: center;
-  text-align: end;
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
-  padding: 16px;
-  margin: 16px;
-
-  background-color: #2E9CCA;
-  height: 200px;
-  font-size: 30px;
-} */
 
 .prefCard button {
   border-radius: 10px;
@@ -124,29 +111,25 @@ instruction{
   background: #2E9CCA;
 
   text-align: center;
+  font-size: 150%;
+
   width: 31%;
+  height: 150px;
   float: left;
-
-
-
 
   padding: 16px;
   margin: 10px;
 }
 
-.prefRow {
-  /* margin: 0 -5px; */
-  margin: 0, 0;
+.prefCard input[type=checkbox] {
+  float: right;
 }
-
 
 .prefCol {
   float: left;
   width: 33%;
   padding: 0 10px;
 }
-
-
 
 #prefBack {
   float: left;

@@ -45,6 +45,11 @@ function prefSelect(cbID) {
     }
 }
 
+// ----------------------------------------------------------------
+// refinePreferences()
+//
+// Purpose: show/hide cuisine preferences based on a users search criteria
+// ----------------------------------------------------------------
 function refinePreferences() {
     // Get the user entered text from the search bar
     var searchBar = document.getElementById("prefSearch");
@@ -72,16 +77,16 @@ function refinePreferences() {
 }
 
 function getPreferences() {
-    var fastFood = document.getElementById("fastfoodCB");
-    var pizza = document.getElementById("pizzaCB");
+    // var fastFood = document.getElementById("fastfoodCB");
+    // var pizza = document.getElementById("pizzaCB");
 
-    var fastFoodChecked = fastFood.checked();
-    var pizzaChecked = pizza.checked();
+    // var fastFoodChecked = fastFood.checked();
+    // var pizzaChecked = pizza.checked();
 
-    var cuisPrefs = {
-        ff: fastFoodChecked,
-        pi: pizzaChecked
-    };
+    // var cuisPrefs = {
+    //     ff: fastFoodChecked,
+    //     pi: pizzaChecked
+    // };
 
     return prefs;
 }
