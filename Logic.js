@@ -32,6 +32,23 @@ function restaurantsPageBack() {
     prefs.style.display = "inline";
 }
 
+function prefSelect(cbID) {
+    // checks the checkbox when the corresponding button is clicked
+
+    var prefCB = document.getElementById(cbID);
+    
+    if(prefCB.checked){
+        prefCB.checked = false;
+    }
+    else{
+        prefCB.checked = true;
+    }
+}
+
+function refinePreferences() {
+    
+}
+
 function getPreferences() {
     var fastFood = document.getElementById("fastfoodCB");
     var pizza = document.getElementById("pizzaCB");
@@ -39,7 +56,7 @@ function getPreferences() {
     var fastFoodChecked = fastFood.checked();
     var pizzaChecked = pizza.checked();
 
-    var prefs = {
+    var cuisPrefs = {
         ff: fastFoodChecked,
         pi: pizzaChecked
     };

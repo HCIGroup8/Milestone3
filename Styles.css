@@ -75,42 +75,13 @@ instruction{
   display: none;
 }
 
-.prefRow {
-  /* margin: 0 -5px; */
-  margin: 0, 0;
-}
 
-.prefRow:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.prefCol {
-  float: left;
-  width: 33%;
-  padding: 0 10px;
-}
-
-.prefCard {
-  display: flex;
-  align-items: center;
-  text-align: end;
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  margin: 16px;
-
-  background-color: #2E9CCA;
-  height: 100px;
-  font-size: 30px;
-}
+/* Cody CSS */
 
 .prefHeader {
   background-color: #f99201;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
@@ -133,9 +104,54 @@ instruction{
   margin: auto;
 }
 
+/* .prefCard {
+  display: flex;
+  align-items: center;
+  text-align: end;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  padding: 16px;
+  margin: 16px;
+
+  background-color: #2E9CCA;
+  height: 200px;
+  font-size: 30px;
+} */
+
+.prefCard button {
+  border-radius: 10px;
+  border: 2px solid #2E9CCA;
+  background: #2E9CCA;
+
+  text-align: center;
+  width: 31%;
+  float: left;
+  
+  padding: 16px;
+  margin: 10px;
+}
+
+.prefRow {
+  /* margin: 0 -5px; */
+  margin: 0, 0;
+}
+
+
+.prefCol {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+
+
 #prefBack {
   float: left;
 }
+
+/* End Cody CSS */
+
+/* Josh CSS */
 
 #McDonaldsLink {
   display: flex;
@@ -190,3 +206,5 @@ instruction{
 .btn-group button:hover {
   background-color: #ffc400;
 }
+
+/* End Josh CSS */

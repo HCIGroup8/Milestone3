@@ -38,7 +38,7 @@
             <button id="prefBack" type="button" onclick="categoriesPageBack()">&larr;</button>
             <h1>Cuisine Options</h1>
             <h4>Select the type of cuisine you would like to browse:</h4>
-            <input type="text" id="prefSearch" onkeyup="myFunction()" placeholder="Search">
+            <input type="text" id="prefSearch" onkeyup="refinePreferences()" placeholder="Search">
             <button type="button" onclick="resturantsPageClick()">See Restaurants</button>
         </div>
 
@@ -47,41 +47,77 @@
 
             <!-- Cuisine options -->
             <div class="prefRow">
-                <div class="prefCol">
-                    <div class="prefCard">
+                <div class="prefCard">
+                    <button type="button" id="mexicanBtn" onclick="prefSelect('mexicanCB')">
                         <label for="mexicanCB">Mexican</label>
                         <input type="checkbox" id="mexicanCB" name="mexican">
-                    </div>
+                    </button>
                 </div>
-                <div class="prefCol">
-                    <div class="prefCard">
+                <div class="prefCard">
+                    <button type="button" id="italianBtn" onclick="prefSelect('italianCB')">
                         <label for="italianCB">Italian</label>
                         <input type="checkbox" id="italianCB" name="italian">
-                    </div>
+                    </button>
                 </div>
-                <div class="prefCol">
-                    <div class="prefCard">
+                <div class="prefCard">
+                    <button type="button" id="fastfoodBtn" onclick="prefSelect('fastfoodCB')">
                         <label for="fastfoodCB">Fast Food</label>
                         <input type="checkbox" id="fastfoodCB" name="fastfood">
-                    </div>
+                    </button>
                 </div>
-                <div class="prefCol">
-                    <div class="prefCard">
+                <div class="prefCard">
+                    <button type="button" id="chickenBtn" onclick="prefSelect('chickenCB')">
                         <label for="chickenCB">Chicken</label>
                         <input type="checkbox" id="chickenCB" name="chicken">
-                    </div>
+                    </button>
                 </div>
-                <div class="prefCol">
-                    <div class="prefCard">
+                <div class="prefCard">
+                    <button type="button">
                         <label for="pizzaCB">Pizza</label>
-                        <input type="checkbox" id="pizzaCB" name="pizza">
-                    </div>
+                        <input type="checkbox" id="pizzaCB" name="pizza" disabled>
+                    </button>
                 </div>
-                <div class="prefCol">
-                    <div class="prefCard">
+                <div class="prefCard">
+                    <button type="button">
                         <label for="chineseCB">Chinese</label>
                         <input type="checkbox" id="chineseCB" name="chinese" disabled>
-                    </div>
+                    </button>
+                </div>
+                <div class="prefCard">
+                    <button type="button">
+                        <label for="thaiCB">Thai</label>
+                        <input type="checkbox" id="thaiCB" name="thai" disabled>
+                    </button>
+                </div>
+                <div class="prefCard">
+                    <button type="button">
+                        <label for="greekCB">Greek</label>
+                        <input type="checkbox" id="greekCB" name="greek" disabled>
+                    </button>
+                </div>
+                <div class="prefCard">
+                    <button type="button">
+                        <label for="bbqCB">Barbecue</label>
+                        <input type="checkbox" id="bbqCB" name="bbq" disabled>
+                    </button>
+                </div>
+                <div class="prefCard">
+                    <button type="button">
+                        <label for="koreanCB">Korean</label>
+                        <input type="checkbox" id="koreanCB" name="korean" disabled>
+                    </button>
+                </div>
+                <div class="prefCard">
+                    <button type="button">
+                        <label for="indianCB">Indian</label>
+                        <input type="checkbox" id="indianCB" name="indian" disabled>
+                    </button>
+                </div>
+                <div class="prefCard">
+                    <button type="button">
+                        <label for="vietnameseCB">Vietnamese</label>
+                        <input type="checkbox" id="vietnameseCB" name="vietnamese" disabled>
+                    </button>
                 </div>
             </div>
         </div>
