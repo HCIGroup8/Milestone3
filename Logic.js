@@ -46,7 +46,29 @@ function prefSelect(cbID) {
 }
 
 function refinePreferences() {
-    
+    // Get the user entered text from the search bar
+    var searchBar = document.getElementById("prefSearch");
+    var filterText = searchBar.value.toLowerCase();
+
+    // Get all the cuisine options from the document
+    var listOfPrefs = document.getElementById("prefDiv");
+    var cuisOptionsArray = listOfPrefs.getElementsByTagName('div');
+    var cuisBtn;
+    var btnText;
+
+    // Loop through all cuisine options and hide ones that don't match user entered string
+    for(var i = 0; i<cuisOptionsArray.length; i++){
+        cuisBtn = cuisOptionsArray[i].getElementsByTagName("button")[0];
+        btnText = cuisBtn.innerText.toLowerCase();
+
+        if(btnText.indexOf(filterText) > -1){
+            cuisOptionsArray[i].style.display = "";
+        }
+        else{
+            cuisOptionsArray[i].style.display = "none";
+        }
+    }
+
 }
 
 function getPreferences() {
