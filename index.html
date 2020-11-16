@@ -39,9 +39,12 @@
             <br>
             <h1>Cuisines</h1>
             <h4>Select the cuisines you would like to browse:</h4>
-            <input type="text" id="prefSearch" onkeyup="refinePreferences()" placeholder="Search Cuisines">
+            <div id="prefSearchDiv">
+                <input type="text" id="prefSearch" onkeyup="refinePreferences()" placeholder="Search Cuisines">
+            </div>
             <button type="button" id="viewAllRestBtn" onclick="selectAllRest()">View All</button>
             <button type="button" id="seeRestBtn" onclick="resturantsPageClick()">See Restaurants &rarr;</button>
+        
         </div>
 
         <div id="prefDiv" class="prefContent">

@@ -32,8 +32,12 @@ function restaurantsPageBack() {
     prefs.style.display = "inline";
 }
 
+// -------------------------------------------------------------------
+// prefSelect()
+//
+// Purpose: checks the corresponding checkbox of the button clicked
+// -------------------------------------------------------------------
 function prefSelect(cbID) {
-    // checks the checkbox when the corresponding button is clicked
 
     var prefCB = document.getElementById(cbID);
     
@@ -76,6 +80,11 @@ function refinePreferences() {
 
 }
 
+// ------------------------------------------
+// selectAllRest()
+//
+// Purpose: checks all preference checkboxes
+// ------------------------------------------
 function selectAllRest() {
     // Get all the cuisine options from the document
     var listOfPrefs = document.getElementById("prefDiv");
@@ -86,7 +95,7 @@ function selectAllRest() {
     for(var i = 0; i<cuisOptionsArray.length; i++){
         cuisCB = cuisOptionsArray[i].getElementsByTagName("input")[0];
 
-        if(!cuisCB.checked){
+        if(!cuisCB.checked && !cuisCB.disabled){
             cuisCB.checked = true;
         }
     }

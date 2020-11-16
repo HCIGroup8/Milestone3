@@ -79,27 +79,32 @@ instruction{
 /* Cody CSS */
 
 .prefHeader {
+  display: inline-block;
   background-color: #f99201;
   text-align: center;
-  /* font-family: Arial, Helvetica, sans-serif; */
   color: #4b4b4b;
   font-size: larger;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  /* top: 0;
-  left: 0; */
   width: 100%;
-  /* float: left; */
+}
+
+#prefSearchDiv {
+  width: 40%;
+  margin: 0 auto;
 }
 
 #prefSearch {
-  /* margin-bottom: 10px; */
-  width: 40%;
+  width: 100%;
   text-align: center;
   margin: 20px;
+  font-size: 20px;
 }
 
 #seeRestBtn {
-  float: right;
+  margin-right: 25px;
+}
+
+#viewAllRestBtn {
   margin-right: 25px;
 }
 
