@@ -38,7 +38,7 @@
             <button id="prefBack" type="button" onclick="categoriesPageBack()">&larr;</button>
             <br>
             <h1>Cuisines</h1>
-            <h4>Select the cuisines you would like to browse:</h4>
+            <!-- <h4>Select the cuisines you would like to browse:</h4> -->
             <div id="prefSearchDiv">
                 <input type="text" id="prefSearch" onkeyup="refinePreferences()" placeholder="Search Cuisines">
             </div>
@@ -129,8 +129,8 @@
     <div id="restaurantsPage">
         <h1>List of Restaurants</h1>
         <button type="button" onclick="restaurantsPageBack();">&larr;</button>
-        <div class="vertical-menu">
-            <div class="fast-food-resturants">
+        <div id="restaurantsDiv" class="vertical-menu">
+            <div id="fastfood" class="fast-food-resturants">
                 <a onclick="" id="McDonaldsLink">
                     <img src="./Images/McDonald's_logo.png" width=70px height=70px style="margin-right:25px">
                     McDonald's

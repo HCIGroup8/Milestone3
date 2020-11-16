@@ -1,4 +1,6 @@
+// ------------------
 // Global Variables
+// ------------------
 
 // Page Divs
 var addr = document.getElementById("addrPage");
@@ -7,6 +9,12 @@ var rests = document.getElementById("restaurantsPage");
 var menu = document.getElementById("menuPage");
 var cart = document.getElementById("cartPage");
 
+// Array holding names of selected cuisine preferences
+var selectedPrefs = [];
+
+// ------------
+// Functions
+// ------------
 
 function categoriesPageClick() {
     addr.style.display = "none";
@@ -19,12 +27,10 @@ function categoriesPageBack() {
 }
 
 function resturantsPageClick() {
+    getPreferences();
+    showValidRestaurants();
     prefs.style.display = "none";
     rests.style.display = "inline";
-
-    getPreferences();
-
-
 }
 
 function restaurantsPageBack() {
@@ -32,11 +38,11 @@ function restaurantsPageBack() {
     prefs.style.display = "inline";
 }
 
-// -------------------------------------------------------------------
+// -------------------------------------------------------------------------
 // prefSelect()
 //
-// Purpose: checks the corresponding checkbox of the button clicked
-// -------------------------------------------------------------------
+// Purpose: checks the checkbox when the button that contains it is clicked
+// -------------------------------------------------------------------------
 function prefSelect(cbID) {
 
     var prefCB = document.getElementById(cbID);
@@ -101,17 +107,57 @@ function selectAllRest() {
     }
 }
 
+// ---------------------------------------------------------------------------------------
+// getPreferences()
+//
+// Purpose: populates an array with the names of the user's selected cuisine preferences
+// ---------------------------------------------------------------------------------------
 function getPreferences() {
-    // var fastFood = document.getElementById("fastfoodCB");
-    // var pizza = document.getElementById("pizzaCB");
+    // Get all the cuisine options from the document
+    var prefDiv = document.getElementById("prefDiv");
+    var arrayOfPrefCards = prefDiv.getElementsByTagName("div");
+    var prefCB;
+    var prefName;
 
-    // var fastFoodChecked = fastFood.checked();
-    // var pizzaChecked = pizza.checked();
+    // Loop through all cuisine options
+    // If a cuisine is checked off, add it to the selectedPrefs array
+    for(var i=0; i<arrayOfPrefCards.length; i++) {
+        prefCB = arrayOfPrefCards[i].getElementsByTagName("input")[0];
+        prefName = prefCB.getAttribute("name");
 
-    // var cuisPrefs = {
-    //     ff: fastFoodChecked,
-    //     pi: pizzaChecked
-    // };
+        // Add preference name to array if its checkbox is checked
+        // and if it doesn't exist in the array already
+        if(prefCB.checked && !selectedPrefs.includes(prefName)){
+            selectedPrefs.push(prefName);
+        }
+        // If checkbox is not checked remove the preference from the array if it exists
+        else if(!prefCB.checked && selectedPrefs.includes(prefName)){
+            var index = selectedPrefs.indexOf(prefName);
+            selectedPrefs.splice(index, 1);
+        }   
+    }
+}
 
-    return prefs;
+// ----------------------------------------------------------------------------------
+// showValidRestaurants()
+//
+// Purpose: shows only restaurants matching the user's selected cuisine preferences
+// ----------------------------------------------------------------------------------
+function showValidRestaurants() {
+    // Get all of the restaurant category divs
+    var restaurantsDiv = document.getElementById("restaurantsDiv");
+    var restaurantTypes = restaurantsDiv.getElementsByTagName("div");
+    var restaurantTypeName;
+
+    // Loop through array of restaurant category divs
+    // Only display categories that are in the selectedPrefs array
+    for(var i = 0; i < restaurantTypes.length; i++){
+        restaurantTypeName = restaurantTypes[i].getAttribute("id");
+        if(selectedPrefs.indexOf(restaurantTypeName) > -1){
+            restaurantTypes[i].style.display = "inline";
+        }
+        else{
+            restaurantTypes[i].style.display = "none";
+        }
+    }
 }

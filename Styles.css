@@ -106,6 +106,7 @@ instruction{
 
 #seeRestBtn {
   margin-right: 25px;
+  margin-bottom: 10px;
   color: black;
   background-color: #77b7d3;
 
@@ -117,6 +118,7 @@ instruction{
 
 #viewAllRestBtn {
   margin-right: 25px;
+  margin-bottom: 10px;
   color: black;
   background-color: #77b7d3;
 
@@ -127,24 +129,11 @@ instruction{
 }
 
 .prefContent {
-  margin-top: 250px;
+  margin-top: 220px;
   background-color: #4b4b4b;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
 }
-/* .prefContent input[type=text]{
-  padding: 10px;
-  font-size: 17px;
-  border: 1px rgb(0, 0, 0);    
-  float: inline-start;
-  width: 30%;
-  background: #dfdfdf;
-  text-align: center;
-  display: grid; 
-  margin-bottom: 2000px;
-  margin: auto;
-} */
-
 
 .prefCard button {
   border-radius: 10px;
