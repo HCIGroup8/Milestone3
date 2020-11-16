@@ -79,6 +79,10 @@ instruction{
 /* Cody CSS */
 
 .prefHeader {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+
   display: inline-block;
   background-color: #f99201;
   text-align: center;
@@ -102,13 +106,28 @@ instruction{
 
 #seeRestBtn {
   margin-right: 25px;
+  color: black;
+  background-color: #77b7d3;
+
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
 }
 
 #viewAllRestBtn {
   margin-right: 25px;
+  color: black;
+  background-color: #77b7d3;
+
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
 }
 
 .prefContent {
+  margin-top: 250px;
   background-color: #4b4b4b;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
@@ -159,7 +178,7 @@ instruction{
   font-size: 20px;
 
   color: black;
-  background-color: grey;
+  background-color: #77b7d3;
 
   border-color: black;
   border-style: solid;
