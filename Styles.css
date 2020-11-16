@@ -81,11 +81,26 @@ instruction{
 .prefHeader {
   background-color: #f99201;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  top: 0;
-  left: 0;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  color: #4b4b4b;
+  font-size: larger;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  /* top: 0;
+  left: 0; */
   width: 100%;
-  float: left;
+  /* float: left; */
+}
+
+#prefSearch {
+  /* margin-bottom: 10px; */
+  width: 40%;
+  text-align: center;
+  margin: 20px;
+}
+
+#seeRestBtn {
+  float: right;
+  margin-right: 25px;
 }
 
 .prefContent {
@@ -93,7 +108,7 @@ instruction{
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
 }
-.prefContent input[type=text]{
+/* .prefContent input[type=text]{
   padding: 10px;
   font-size: 17px;
   border: 1px rgb(0, 0, 0);    
@@ -101,9 +116,11 @@ instruction{
   width: 30%;
   background: #dfdfdf;
   text-align: center;
-  display: grid;
+  display: grid; 
+  margin-bottom: 2000px;
   margin: auto;
-}
+} */
+
 
 .prefCard button {
   border-radius: 10px;
@@ -117,8 +134,9 @@ instruction{
   height: 150px;
   float: left;
 
-  padding: 16px;
-  margin: 10px;
+  padding: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
 }
 
 .prefCard input[type=checkbox] {
@@ -133,6 +151,18 @@ instruction{
 
 #prefBack {
   float: left;
+  font-size: 20px;
+
+  color: black;
+  background-color: grey;
+
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 /* End Cody CSS */

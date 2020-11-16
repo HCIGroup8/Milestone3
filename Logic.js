@@ -76,6 +76,22 @@ function refinePreferences() {
 
 }
 
+function selectAllRest() {
+    // Get all the cuisine options from the document
+    var listOfPrefs = document.getElementById("prefDiv");
+    var cuisOptionsArray = listOfPrefs.getElementsByTagName('div');
+    var cuisCB;
+
+    // Loop through all cuisine options and check all the checkboxes
+    for(var i = 0; i<cuisOptionsArray.length; i++){
+        cuisCB = cuisOptionsArray[i].getElementsByTagName("input")[0];
+
+        if(!cuisCB.checked){
+            cuisCB.checked = true;
+        }
+    }
+}
+
 function getPreferences() {
     // var fastFood = document.getElementById("fastfoodCB");
     // var pizza = document.getElementById("pizzaCB");
