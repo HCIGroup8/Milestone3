@@ -166,6 +166,7 @@ function showValidRestaurants() {
 function showPreferenceChips(){
     var chipDiv = document.getElementById("prefChips");
     var chipHTML = "";
+    var chipPlus = "<div class=\"chip\" onclick=\"restaurantsPageBack()\"><span >&plus;</span></div>"
 
     for(var i = 0; i < selectedPrefs.length; i++){
         chipHTML += `<div class=\"chip\">
@@ -173,6 +174,8 @@ function showPreferenceChips(){
                         <span class="closeBtn" onclick="removePreference('${selectedPrefs[i]}')">&times;</span>
                     </div>`;
     }
+
+    chipHTML += chipPlus;
     chipDiv.innerHTML = chipHTML;
 }
 

@@ -35,7 +35,7 @@
     <!-- Cuisine Categories Page -->
     <div id="categoriesPage">
         <div class="prefHeader">
-            <button id="prefBack" type="button" onclick="categoriesPageBack()">&larr;</button>
+            <button id="prefBack" class="backBtn" type="button" onclick="categoriesPageBack()">&larr;</button>
             <br>
             <h1>Cuisines</h1>
             <!-- <h4>Select the cuisines you would like to browse:</h4> -->
@@ -56,9 +56,9 @@
                 </button>
             </div>
             <div class="prefCard">
-                <button type="button" id="italianBtn" onclick="prefSelect('italianCB')">
-                    <label for="italianCB">Italian</label>
-                    <input type="checkbox" id="italianCB" name="italian">
+                <button type="button" id="pizzaBtn" onclick="prefSelect('pizzaCB')">
+                    <label for="pizzaCB">Pizza</label>
+                    <input type="checkbox" id="pizzaCB" name="pizza">
                 </button>
             </div>
             <div class="prefCard">
@@ -74,9 +74,9 @@
                 </button>
             </div>
             <div class="prefCard">
-                <button type="button">
-                    <label for="pizzaCB">Pizza</label>
-                    <input type="checkbox" id="pizzaCB" name="pizza" disabled>
+                <button type="button" >
+                    <label for="italianCB">Italian</label>
+                    <input type="checkbox" id="italianCB" name="italian" disabled>
                 </button>
             </div>
             <div class="prefCard">
@@ -127,8 +127,8 @@
 
     <!-- Restaurant Page -->
     <div id="restaurantsPage">
-        <h1>List of Restaurants</h1>
-        <button type="button" onclick="restaurantsPageBack();">&larr;</button>
+        <!-- <h1>List of Restaurants</h1> -->
+        <button type="button" onclick="restaurantsPageBack()">&larr;</button>
         <div id="prefChips">
             <!-- This div holds the preference chips -->
         </div>
@@ -152,17 +152,17 @@
                 </a>
             </div>
             <div id="chicken">
-                <a onclick="">Chicken Resturant</a>
-                <a onclick="">Chicken Resturant</a>
-                <a onclick="">Chicken Resturant</a>
+                <a onclick="">Chicken Chef</a>
+                <a onclick="">Popeyes</a>
+                <a onclick="">Mary Browns</a>
             </div>
-            <div id="italian">
-                <a onclick="">Italian Resturant</a>
-                <a onclick="">Italian Resturant</a>
+            <div id="pizza">
+                <a onclick="">Little Caesar's</a>
+                <a onclick="">Dominos</a>
             </div>
             <div id="mexican">
-                <a onclick="">Mexican Resturant</a>
-                <a onclick="">Mexican Resturant</a>
+                <a onclick="">Taco Del Mar</a>
+                <a onclick="">Qdoba's</a>
             </div>
             
     </div>
