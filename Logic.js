@@ -170,12 +170,15 @@ function showPreferenceChips(){
     for(var i = 0; i < selectedPrefs.length; i++){
         chipHTML += `<div class=\"chip\">
                         ${selectedPrefs[i]}
-                        <span class="closeBtn" onclick="">&times;</span>
+                        <span class="closeBtn" onclick="removePreference('${selectedPrefs[i]}')">&times;</span>
                     </div>`;
-
-        
     }
     chipDiv.innerHTML = chipHTML;
-
 }
 
+function removePreference(prefName){
+    var index = selectedPrefs.indexOf(prefName);
+    selectedPrefs.splice(index, 1);
+    showPreferenceChips();
+    showValidRestaurants();
+}
