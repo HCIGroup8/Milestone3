@@ -29,6 +29,7 @@ function categoriesPageBack() {
 function resturantsPageClick() {
     getPreferences();
     showValidRestaurants();
+    showPreferenceChips();
     prefs.style.display = "none";
     rests.style.display = "inline";
 }
@@ -161,3 +162,20 @@ function showValidRestaurants() {
         }
     }
 }
+
+function showPreferenceChips(){
+    var chipDiv = document.getElementById("prefChips");
+    var chipHTML = "";
+
+    for(var i = 0; i < selectedPrefs.length; i++){
+        chipHTML += `<div class=\"chip\">
+                        ${selectedPrefs[i]}
+                        <span class="closeBtn" onclick="">&times;</span>
+                    </div>`;
+
+        
+    }
+    chipDiv.innerHTML = chipHTML;
+
+}
+
