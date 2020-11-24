@@ -176,7 +176,166 @@
 
     <!-- Cart -->
     <div id="cartPage">
+       <!-- <h1>Cart</h1> -->
+       <div class="headCart">
+        <button id="cartBack" type="button" onclick="">&larr;</button>
         <h1>Cart</h1>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+  
+       
+      <div id="qtyInfo" class="popUpQty">
+        <br>
+        <br>
+        <p id="qtyText">Current Quantity: <a id="quantity">3</a></p>
+        <div class="qtyChg">
+             <button id="decQty" type="button" onclick="minusQty()" style="font-size:20px">-</button>
+             <button id="inQty" type="button" onclick="plusQty()" style="font-size:20px">+</button>
+        </div>
+        <button id="doneQty" type="button" onclick="closePopUpQty()")>Ok</button>
+      </div>
+      
+  
+      <div class="cartPage"> 
+       <div class="itemList">
+          <div id="item1" class="itemCard">
+          <img class="itemPic" src="./FOODPIC/bigmac.jpeg" >
+  
+            <div class=iCard>
+              <div class=itemName>
+                <p id=itmNameText> $10.39</p>
+                <p id=itmNameText> Big Mac</p>
+              </div>
+  
+            <div class=itemQty>
+              <p  id=itmQtyText>Qty:3</p>
+            </div>
+            </div>
+            <button id=editCart onclick="">Edit</button>
+            <div class=emptyBlock></div>        
+            <button id=deleteCart onclick="openPopUpQty()">Delete</button>
+            
+          </div>
+  
+          <div id="item2" class="itemCard">
+          <img class="itemPic" src="./foodPic/fries.jpeg">
+  
+            <div class=iCard>
+              <div class=itemName>
+                <p id=itmNameText> &nbsp$4.49</p>
+                <p id=itmNameText> &nbspMed Fries</p>
+              </div>
+  
+              <div class=itemQty>
+                <p  id=itmQtyText>Qty:3</p>
+              </div>
+            </div>        
+            <button id=editCart onclick="">Edit</button>
+            <div class=emptyBlock></div>
+            <button id=deleteCart onclick="removeItem2(item2)">Delete</button>
+  
+          </div>
+  
+          <div id="item3" class="itemCard">
+          <img class="itemPic" src="./foodPic/'A'combo.jpeg">
+            
+            <div class=iCard>
+              <div class=itemName>
+                <p id=itmNameText> &nbsp$1.29</p>
+                <p id=itmNameText> &nbspMc'A'combo</p>
+              </div> 
+  
+              <div class=itemQty>
+                <p  id=itmQtyText>Qty:1</p>
+              </div>
+            </div>     
+            <button id=editCart onclick="">Edit</button>
+            <div class=emptyBlock></div>
+            <button id=deleteCart onclick="removeItem3(item3)">Delete</button>
+  
+          </div>
+  
+          <div id="item4" class="itemCard">
+          <img class="itemPic" src="./foodPic/macNuggets.jpeg">
+  
+            <div class=iCard>
+              <div class=itemName>
+                <p id=itmNameText> &nbsp$4.32</p>
+                <p id=itmNameText> &nbspMcNuggets</p>
+              </div> 
+  
+              <div class=itemQty>
+                <p  id=itmQtyText>Qty:1</p>
+              </div>
+            </div>
+            <button id=editCart onclick="">Edit</button>
+            <div class=emptyBlock></div>
+            <button id=deleteCart onclick="removeItem4(item4)">Delete</button>
+  
+          </div>
+  
+          <div id="item5" class="itemCard">
+          <img class="itemPic" src="./foodPic/softDrink.jpeg" >
+  
+            <div class=iCard>
+              <div class=itemName>
+                <p id=itmNameText> &nbsp$3.58</p>
+                <p id=itmNameText> &nbspLrg Fanta</p>
+              </div>    
+  
+              <div class=itemQty>
+                <p  id=itmQtyText>Qty:3</p>
+              </div>  
+            </div>
+            <button id=editCart onclick="">Edit</button>
+            <div class=emptyBlock></div>
+            <button id=deleteCart onclick="removeItem5(item5)">Delete</button>
+  
+          </div>
+        </div>
+  
+  
+  
+        <div class="paymentList">
+            <br>
+            <br>
+            <br>
+  
+          <div class="card-header">Payment Method</div>
+            <div class="card-body">
+              <form action="/action_page.php">
+                <p>Please select one below:</p>
+                <input type="radio" id="Pay On Delivery" name="PaymentMethod" value="Pay On Delivery">
+                <label for="Pay On Delivery">Pay On Delivery</label><br>
+                <input type="radio" id="Pay Pal" name="PaymentMethod" value="Pay Pal">
+                <label for="Pay Pal">Pay Pal</label><br>
+                <input type="radio" id="Google Pay" name="PaymentMethod" value="Google Pay">
+                <label for="Google Pay">Google Pay</label><br>
+                <input type="radio" id="other" name="PaymentMethod" value="other">
+                <label for="other">Other</label>
+              </form>
+            </div>
+  
+  
+  
+            <div class="card-header">Total</div>
+              <div class="card-body">
+                <p>food:xxx</p>
+                <p>GST:xxx</p>
+                <p>PST:xxx</p>
+                <p>Delivery:xxx</p>
+                <p>Total payment:xxx</p>
+                <button type="button" class="btn btn-dark">Place Your Order</button>
+              </div>
+  
+        </div> 
+      </div>
+      <br>
+      <br>
+
     </div>
 
     <!-- Edit Item -->

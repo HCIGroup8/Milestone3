@@ -198,3 +198,60 @@ function removePreference(prefName){
     showPreferenceChips();
     showValidRestaurants();
 }
+
+
+// js for cart page below
+
+//below removeItem 1-5 are for remove the itemBoxes
+function removeItem1() {
+    var deleteItem1 = document.getElementById("item1");
+    deleteItem1.remove();
+  }
+  
+  function removeItem2(){
+    var deleteItem2 = document.getElementById("item2");
+    deleteItem2.remove();
+  }
+
+  function removeItem3(){
+    var deleteItem3 = document.getElementById("item3");
+    deleteItem3.remove();
+  }
+
+  function removeItem4(){
+    var deleteItem4 = document.getElementById("item4");
+    deleteItem4.remove();
+  }
+
+  function removeItem5(){
+    var deleteItem5 = document.getElementById("item5");
+    deleteItem5.remove();
+  }
+ //end of itemboxes deletion
+
+
+  var quantity = 3;
+//this is for the popup quantity customization for decrease 1 quantity
+function minusQty() {
+    quantity -= 1;
+    document.getElementById("quantity").innerHTML = quantity;
+}
+
+//this is for the popup quantity customization for increase 1 quantity
+function plusQty(){
+    quantity +=1;
+    document.getElementById("quantity").innerHTML = quantity;
+
+}
+
+//this is for the popup quantity cusomization to show
+function openPopUpQty(){
+    document.getElementById("qtyInfo").style.display = "block";
+}
+
+//this is for the popup quantity cusomization to close
+function closePopUpQty() {
+     document.getElementById("qtyInfo").style.display = "none";
+} 
+
+//end js for cart page
