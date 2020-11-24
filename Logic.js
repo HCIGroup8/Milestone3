@@ -39,6 +39,11 @@ function restaurantsPageBack() {
     prefs.style.display = "inline";
 }
 
+function menuPageClick() {
+    rests.style.display = "none";
+    menu.style.display = "inline";
+}
+
 // -------------------------------------------------------------------------
 // prefSelect()
 //
@@ -184,6 +189,13 @@ function showPreferenceChips(){
     chipDiv.innerHTML = chipHTML;
 }
 
+// -------------------------------------------------------------------------------------
+// removePreference
+//
+// Purpose: removes a preference from the preferences array and any chips/checkboxes 
+//
+// Parameters: prefName -> (String) name of the preference to be removed
+// -------------------------------------------------------------------------------------
 function removePreference(prefName){
     var index = selectedPrefs.indexOf(prefName); // index of preference in the selected prefs array
     var checkboxID = prefName.concat("CB"); // id of the checkbox corresponding to the preference
@@ -192,7 +204,8 @@ function removePreference(prefName){
     // Uncheck the coresponding checkbox
     prefCb.checked = false;
 
-    selectedPrefs.splice(index, 1); // remove the preference from the array
+    // Remove the preference from the array
+    selectedPrefs.splice(index, 1); 
 
     // Display only the chips/restaurants for the new set of selected preferences
     showPreferenceChips();
