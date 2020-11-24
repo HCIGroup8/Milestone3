@@ -128,59 +128,59 @@
     <!-- Restaurant Page -->
     <div id="restaurantsPage">
         <!-- <h1>List of Restaurants</h1> -->
-        <button type="button" onclick="restaurantsPageBack()">&larr;</button>
+        <button type="button" class="backBtn" onclick="restaurantsPageBack()">&larr;</button>
         <div id="prefChipsDiv">
             <!-- This div holds the preference chips -->
         </div>
         <div id="restaurantsDiv" class="vertical-menu">
             <div id="fastfood" class="fast-food-resturants">
-                <a onclick="" id="McDonaldsLink">
+                <a onclick="menuPageClick()" id="McDonaldsLink">
                     <img src="./Images/McDonald's_logo.png" width=70px height=70px style="margin-right:25px">
                     <p>McDonald's</p>
                 </a>
-                <a onclick="" id="BurgerKingLink">
+                <a onclick="menuPageClick()" id="BurgerKingLink">
                     <img src="./Images/BurgerKing_logo.png" width=70px height=70px style="margin-right:25px">
                     Burger King
                 </a>
-                <a onclick="" id="AandWLink">
+                <a onclick="menuPageClick()" id="AandWLink">
                     <img src="./Images/A&W_logo.png" width=70px height=70px style="margin-right:25px">
                     A&W
                 </a>
-                <a onclick="" id="DairyQueenLink">
+                <a onclick="menuPageClick()" id="DairyQueenLink">
                     <img src="./Images/DairyQueen_logo.png" width=70px height=70px style="margin-right:25px">
                     Dairy Queen
                 </a>
             </div>
             <div id="chicken">
-                <a onclick="" id="KFCLink">
+                <a onclick="menuPageClick()" id="KFCLink">
                     <img src="./Images/KFC_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
                     KFC
                 </a>
-                <a onclick="">
+                <a onclick="menuPageClick()">
                     <img src="./Images/Popeyes_logo.png" width="70px" height="70px" style="margin-right: 25px;">
                     Popeyes
                 </a>
-                <a onclick="">
+                <a onclick="menuPageClick()">
                     <img src="./Images/MaryBrowns_logo.png" width="70px" height="70px" style="margin-right: 25px;">
                     Mary Brown's
                 </a>
             </div>
             <div id="pizza">
-                <a onclick="">
+                <a onclick="menuPageClick()">
                     <img src="./Images/LittleCaesars_logo.png" width="70px" height="70px" style="margin-right: 25px;">
                     Little Caesar's
                 </a>
-                <a onclick="">
+                <a onclick="menuPageClick()">
                     <img src="./Images/Dominos_logo.png" width="70px" height="70px" style="margin-right: 25px;">
                     Domino's
                 </a>
             </div>
             <div id="mexican">
-                <a onclick="">
+                <a onclick="menuPageClick()">
                     <img src="./Images/TacoDelMar_logo.png" width="70px" height="70px" style="margin-right: 25px;">
                     Taco Del Mar
                 </a>
-                <a onclick="">
+                <a onclick="menuPageClick()">
                     <img src="./Images/Qdobas_logo.png" width="70px" height="70px" style="margin-right: 25px;">
                     Qdoba's
                 </a>
@@ -191,15 +191,15 @@
     <!-- Menu Page -->
     <div id="menuPage">
         <h1>Restaurant menu</h1>
-        <button type="button">Next</button>
-        <button type="button">Back</button>
+        <button type="button" class="backBtn" onclick="menuBack()">&larr;</button>
+        <button type="button" onclick="cartClick()">Next</button>
     </div>
 
     <!-- Cart -->
     <div id="cartPage">
        <!-- <h1>Cart</h1> -->
        <div class="headCart">
-        <button id="cartBack" type="button" onclick="">&larr;</button>
+        <button id="cartBack" type="button" onclick="cartBack()">&larr;</button>
         <h1>Cart</h1>
       </div>
       <br>

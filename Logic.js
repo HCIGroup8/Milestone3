@@ -44,6 +44,21 @@ function menuPageClick() {
     menu.style.display = "inline";
 }
 
+function menuBack() {
+    menu.style.display = "none";
+    rests.style.display = "inline";
+}
+
+function cartClick() {
+    menu.style.display = "none";
+    cart.style.display = "inline";
+}
+
+function cartBack() {
+    cart.style.display = "none";
+    menu.style.display = "inline"
+}
+
 // -------------------------------------------------------------------------
 // prefSelect()
 //
