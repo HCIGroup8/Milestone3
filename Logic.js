@@ -163,8 +163,13 @@ function showValidRestaurants() {
     }
 }
 
+// ----------------------------------------------------------
+// showPrefenceChips()
+//
+// Purpose: shows user selected preferences as chips
+// ----------------------------------------------------------
 function showPreferenceChips(){
-    var chipDiv = document.getElementById("prefChips");
+    var chipDiv = document.getElementById("prefChipsDiv");
     var chipHTML = "";
     var chipPlus = "<div class=\"chip\" onclick=\"restaurantsPageBack()\"><span >&plus;</span></div>"
 
@@ -180,8 +185,16 @@ function showPreferenceChips(){
 }
 
 function removePreference(prefName){
-    var index = selectedPrefs.indexOf(prefName);
-    selectedPrefs.splice(index, 1);
+    var index = selectedPrefs.indexOf(prefName); // index of preference in the selected prefs array
+    var checkboxID = prefName.concat("CB"); // id of the checkbox corresponding to the preference
+    var prefCb = document.getElementById(checkboxID); // preference checkbox
+
+    // Uncheck the coresponding checkbox
+    prefCb.checked = false;
+
+    selectedPrefs.splice(index, 1); // remove the preference from the array
+
+    // Display only the chips/restaurants for the new set of selected preferences
     showPreferenceChips();
     showValidRestaurants();
 }

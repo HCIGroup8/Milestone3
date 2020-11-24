@@ -186,6 +186,7 @@ instruction{
   line-height: 50px;
   border-radius: 25px;
   background-color: #f1f1f1;
+  margin: 10px;
 }
 
 .closeBtn {
@@ -195,6 +196,10 @@ instruction{
   float: right;
   font-size: 20px;
   cursor: pointer;
+}
+
+#prefChipsDiv {
+  background-color: #f99201;
 }
 
 /* End Cody CSS */
