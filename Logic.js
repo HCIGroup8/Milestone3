@@ -28,6 +28,9 @@ function categoriesPageBack() {
 
 function resturantsPageClick() {
     getPreferences();
+    if(selectedPrefs.length == 0){
+        selectAllRest();
+    }
     showValidRestaurants();
     showPreferenceChips();
     prefs.style.display = "none";
@@ -191,7 +194,7 @@ function showValidRestaurants() {
 function showPreferenceChips(){
     var chipDiv = document.getElementById("prefChipsDiv");
     var chipHTML = "";
-    var chipPlus = "<div class=\"chip\" onclick=\"restaurantsPageBack()\"><span >&plus;</span></div>"
+    var chipPlus = "<div class=\"chip\" onclick=\"restaurantsPageBack()\"><span>&plus;</span></div>"
 
     for(var i = 0; i < selectedPrefs.length; i++){
         chipHTML += `<div class=\"chip\">
