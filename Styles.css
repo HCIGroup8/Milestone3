@@ -210,29 +210,105 @@ instruction{
   display: flex;
   align-items: center;
   overflow-y: unset;
+  border-radius: 10px;
 }
 
 #BurgerKingLink {
   display: flex;
   align-items: center;
   overflow-y: unset;
+  border-radius: 10px;
+
 }
 
 #AandWLink {
   display: flex;
   align-items: center;
   overflow-y: unset;
+  border-radius: 10px;
+
 }
 
-#DairyQueen {
+#DairyQueenLink {
   display: flex;
   align-items: center;
   overflow-y: unset;
+  border-radius: 10px;
 }
+
+#KFCLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+  border-radius: 10px;
+
+}
+
+#PopeyesLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+  border-radius: 10px;
+
+}
+
+#MaryBrownsLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+  border-radius: 10px;
+
+}
+
+#LittleCaesarsLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+  border-radius: 10px;
+
+}
+
+#DominosLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+  border-radius: 10px;
+
+}
+
+#TacoDelMarLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+  border-radius: 10px;
+
+}
+
+#QdobasLink {
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+  border-radius: 10px;
+
+}
+
+.vertical-menu button {
+  background-color: #f99201; /* Grey background color */
+  color: white; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  border: 1px solid white; /* Green border */
+  text-decoration: none; /* Remove underline from links */
+  width: 100%;
+  height: 100px;
+  overflow-y: auto;
+}
+
 
 .vertical-menu {
   width: 100%; /* Set a width if you like */
   height: 100%;
+  
 }
 
 .vertical-menu a {
