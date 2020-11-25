@@ -354,7 +354,7 @@ instruction{
 
 
 .paymentList {
-  float:left;
+  float:right;
   width: 20%;
   height:100%;
   background-color: #dde5e9;
