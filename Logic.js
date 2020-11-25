@@ -361,56 +361,84 @@ function insertRestaurantInfo() {
 
 // js for cart page below
 
-//below removeItem 1-5 are for remove the itemBoxes
-function removeItem1() {
-    var deleteItem1 = document.getElementById("item1");
-    deleteItem1.remove();
-  }
-  
-  function removeItem2(){
+function removeItem2(){//to be deleted
     var deleteItem2 = document.getElementById("item2");
     deleteItem2.remove();
   }
-
-  function removeItem3(){
+  
+  function removeItem3(){//to be deleted
     var deleteItem3 = document.getElementById("item3");
     deleteItem3.remove();
   }
-
-  function removeItem4(){
+  
+  function removeItem4(){//to be deleted
     var deleteItem4 = document.getElementById("item4");
     deleteItem4.remove();
   }
-
-  function removeItem5(){
+  
+  function removeItem5(){//to be deleted
     var deleteItem5 = document.getElementById("item5");
     deleteItem5.remove();
   }
- //end of itemboxes deletion
-
-
-  var quantity = 3;
-//this is for the popup quantity customization for decrease 1 quantity
-function minusQty() {
-    quantity -= 1;
-    document.getElementById("quantity").innerHTML = quantity;
-}
-
-//this is for the popup quantity customization for increase 1 quantity
-function plusQty(){
-    quantity +=1;
-    document.getElementById("quantity").innerHTML = quantity;
-
-}
-
-//this is for the popup quantity cusomization to show
-function openPopUpQty(){
+  
+  //for remove itemCard
+  function removeItem(toDelete){
+   var toRemove = document.getElementById(toDelete);
+   toRemove.remove();
+  }
+  
+  var currItemQuantity = 3; //for storing current deleteing item qty
+  document.getElementById("itemQtyjs").innerHTML = currItemQuantity;
+  
+  var bigMacQty = 3;
+  var FriesQty = 3;
+  var aComboQty = 1;
+  var mcNugQty = 1;
+  var fantaQty = 3;
+  
+  document.getElementById("bigMacbr").innerHTML = bigMacQty;
+  document.getElementById("friesbr").innerHTML = FriesQty;
+  document.getElementById("aCombobr").innerHTML = aComboQty;
+  document.getElementById("mcNugbr").innerHTML = mcNugQty;
+  document.getElementById("fantabr").innerHTML = fantaQty;
+  
+  //this is for the popup quantity cusomization to show
+  function openPopUpQty(qtyToShow){
     document.getElementById("qtyInfo").style.display = "block";
-}
-
-//this is for the popup quantity cusomization to close
-function closePopUpQty() {
+    //currItemQtyEdit(qtyToShow);
+  }
+  
+  //this is for the popup quantity cusomization to close
+  function closePopUpQty() {
+    if(currItemQuantity == 0){
+      removeItem("item1"); //to be corrected
+    }
      document.getElementById("qtyInfo").style.display = "none";
-} 
+  }    
+  
+  //this is for the popup quantity customization for decrease 1 quantity
+  function minusQty() {
+    if(currItemQuantity > 0){
+        currItemQuantity -= 1;
+        bigMacQty = currItemQuantity;  //to be corrected
+        document.getElementById("bigMacbr").innerHTML =  bigMacQty; //to be corrected
+        document.getElementById("itemQtyjs").innerHTML =  currItemQuantity;
+    }
+  
+   }
+  
+   //this is for the popup quantity customization for increase 1 quantity
+  function plusQty(){
+    currItemQuantity +=1;
+    bigMacQty = currItemQuantity; //to be corrected
+    document.getElementById("bigMacbr").innerHTML = bigMacQty; //to be corrected
+      document.getElementById("itemQtyjs").innerHTML =  currItemQuantity;
+    
+  }
+  
+  function currItemQtyEdit(toEdit){ //not able to use
+     currItemQuantity = toEdit.value;
+     document.getElementById("itemQtyjs").innerHTML = currItemQuantity;
+  }
 
 //end js for cart page
