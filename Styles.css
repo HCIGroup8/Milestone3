@@ -227,9 +227,26 @@ instruction{
 
 .restaurantDescription {
   margin-left: auto;
-  
+  padding-left: 100px;
 }
 
+#MenuButtons button {
+  
+  float: left;
+  font-size: 20px;
+
+  color: black;
+  background-color: red;
+
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50%;
+
+  margin-left: 10px;
+  margin-top: 10px;
+
+}
 
 /* End Cody CSS */
 
