@@ -233,21 +233,27 @@ instruction{
 #MenuButtons button {
   
   float: left;
-  font-size: 20px;
+  font-size: 15px;
 
   color: black;
-  background-color: red;
+  background-color: rgb(245, 193, 115);
 
   border-color: black;
   border-style: solid;
   border-width: 2px;
-  border-radius: 50%;
+  border-radius: 15px;
 
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-left: 50px;
+  margin-top: 50px;
+
+  height: 100px;
+  width: 150px;
 
 }
 
+#MenuButtons button:hover {
+  background-color: rgb(173, 240, 156)
+}
 /* End Cody CSS */
 
 /* Josh CSS */

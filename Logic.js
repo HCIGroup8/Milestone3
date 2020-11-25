@@ -12,6 +12,108 @@ var cart = document.getElementById("cartPage");
 // Array holding names of selected cuisine preferences
 var selectedPrefs = [];
 
+const MAX_FEE = 1500;
+
+// Restaurant Data Objects
+var mcdonaldsObj = {
+    name: "McDonald's",
+    img: "./Images/McDonald's_logo.png",
+    description: "Your favourite place.",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "20-25",
+    distance: 2
+};
+
+var burgerKingObj = {
+    name: "Burger King",
+    img: "./Images/BurgerKing_logo.png",
+    description: "Eat like a king",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "5-10",
+    distance: 0.5
+};
+
+var awObj = {
+    name: "A & W",
+    img: "./Images/A&W_logo.png",
+    description: "A Family Place",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "10-15",
+    distance: 1
+};
+
+var dairyQueenObj = {
+    name: "Dairy Queen",
+    img: "./Images/DairyQueen_logo.png",
+    description: "Treat yo self",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "10-15",
+    distance: 5
+};
+
+var kfcObj = {
+    name: "KFC",
+    img: "./Images/KFC_Logo.png",
+    description: "Finger Lickin Good",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "1",
+    distance: 2
+};
+
+var popeyesObj = {
+    name: "Popeye's",
+    img: "./Images/Popeyes_logo.png",
+    description: "Louisiana Chicken",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "30",
+    distance: 15
+};
+
+var marybrownsObj = {
+    name: "Mary Brown's",
+    img: "./Images/MaryBrowns_logo.png",
+    description: "Made Fresh From Scratch",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "7",
+    distance: 7
+};
+
+var littlecaesarsObj = {
+    name: "Little Caesar's",
+    img: "./Images/LittleCaesars_logo.png",
+    description: "Pizza! Pizza!",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "10",
+    distance: 3
+};
+
+var dominosObj = {
+    name: "Domino's",
+    img: "./Images/Dominos_logo.png",
+    description: "Its what we do!",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "7",
+    distance: 3
+};
+
+var tacodelmarObj = {
+    name: "Taco Del Mar",
+    img: "./Images/TacoDelMar_logo.png",
+    description: "Its taco time",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "4",
+    distance: 1
+};
+
+var qdobaObj = {
+    name: "Qdoba",
+    img: "./Images/Qdoba_logo.png",
+    description: "Its what we do!",
+    deliveryFee: Math.random() * MAX_FEE,
+    deliveryTime: "10",
+    distance: 7
+};
+
 // ------------
 // Functions
 // ------------
@@ -45,6 +147,7 @@ function restaurantsPageBack() {
 function menuPageClick() {
     rests.style.display = "none";
     menu.style.display = "inline";
+    insertRestaurantInfo();
 }
 
 function menuBack() {
@@ -232,11 +335,20 @@ function removePreference(prefName){
 
 function insertRestaurantInfo() {
     var restInfoDiv = document.getElementById("RestaurantInfo");
+    var restaurant = burgerKingObj;
     var infoHTML = "";
 
-    // Do the stuff here
-    infoHTML += `<img src="" width=70px height=70px style="margin-right:25px">`
+    // Build up the string of html to insert
+    infoHTML += `<img src="${restaurant.img}" width=70px height=70px style="margin-right:25px">`;
+    infoHTML += `<p id="RestaurantName">${restaurant.name}</p>`;
+    infoHTML += `<p style="padding-left: 300px;">${restaurant.description}</p>`;
+    infoHTML += `<div class="restaurantDescription">`;
+    infoHTML += `<p>Distance: ${restaurant.distance}km away</p>`;
+    infoHTML += `<p>Est. Delivery Time: 20-25 min</p>`;
+    infoHTML += `<p>Delivery Fee: $${restaurant.deliveryFee/100}</p>`;
+    infoHTML += `</div>`;
 
+    // Insert the html into the document
     restInfoDiv.innerHTML = infoHTML;
 }
 
