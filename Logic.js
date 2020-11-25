@@ -333,10 +333,16 @@ function removePreference(prefName){
     showValidRestaurants();
 }
 
+// ---------------------------------------------------------------
+// insertRestaurantInfo
+//
+// Purpose: dynamically generate the restaurant info to display 
+// ---------------------------------------------------------------
 function insertRestaurantInfo() {
+    // Get the containing div from the document
     var restInfoDiv = document.getElementById("RestaurantInfo");
-    var restaurant = burgerKingObj;
-    var infoHTML = "";
+    var restaurant = burgerKingObj; // choose restaurant data to fill
+    var infoHTML = ""; // string to fill with HTML code
 
     // Build up the string of html to insert
     infoHTML += `<img src="${restaurant.img}" width=70px height=70px style="margin-right:25px">`;
