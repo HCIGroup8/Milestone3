@@ -190,12 +190,26 @@
 
     <!-- Menu Page -->
     <div id="menuPage">
-        <h1>Restaurant menu</h1>
+      <div id="menuHeader">
         <button type="button" class="backBtn" onclick="menuBack()">&larr;</button>
-        <button type="button" onclick="cartClick()">Next</button>
+        <button style="float: right;" type="button" onclick="cartClick()">
+          <img src="./Images/cart.png" height="30px" width="30px">
+        </button>
+      </div>
+      <div id="RestaurantInfo">
+        <img src="./Images/McDonald's_logo.png" width=150px height=150px style="margin-right: 100px;">
+        <p id="RestaurantName">McDonalds </p>
+        <div class="restaurantDescription">
+          <p> Delivery Fee: $3</p>
+          <p> 2km away, 20-25 minsRestaurant Description..., $3 delivery fee</p>
+        </div>
+
+      </div>
+
+      <div id="MenuButtons"></div>  
+      <div id="MenuItems"></div>
 
 
-        
     </div>
 
     <!-- Cart -->

@@ -230,6 +230,16 @@ function removePreference(prefName){
     showValidRestaurants();
 }
 
+function insertRestaurantInfo() {
+    var restInfoDiv = document.getElementById("RestaurantInfo");
+    var infoHTML = "";
+
+    // Do the stuff here
+    infoHTML += `<img src="" width=70px height=70px style="margin-right:25px">`
+
+    restInfoDiv.innerHTML = infoHTML;
+}
+
 
 // js for cart page below
 

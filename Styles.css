@@ -202,94 +202,54 @@ instruction{
   background-color: #f99201;
 }
 
+#menuHeader {
+  background-color: #f99201;
+  height: 50px;
+}
+
+#RestaurantInfo {
+  background-color: #77b7d3;
+  color: black;
+  display: flex;
+  align-items: center;
+  overflow-y: unset;
+}
+
+#RestaurantInfo img{
+  margin: 20px;
+}
+
+#RestaurantName {
+  display: inline;
+  font-size: 50px;
+}
+
+
+.restaurantDescription {
+  margin-left: auto;
+  
+}
+
+
 /* End Cody CSS */
 
 /* Josh CSS */
 
-#McDonaldsLink {
+#McDonaldsLink, 
+#BurgerKingLink, 
+#AandWLink, 
+#DairyQueenLink, 
+#KFCLink, 
+#PopeyesLink, 
+#MaryBrownsLink, 
+#LittleCaesarsLink, 
+#DominosLink, 
+#TacoDelMarLink, 
+#QdobasLink  {
   display: flex;
   align-items: center;
   overflow-y: unset;
   border-radius: 10px;
-}
-
-#BurgerKingLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#AandWLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#DairyQueenLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-}
-
-#KFCLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#PopeyesLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#MaryBrownsLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#LittleCaesarsLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#DominosLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#TacoDelMarLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
-}
-
-#QdobasLink {
-  display: flex;
-  align-items: center;
-  overflow-y: unset;
-  border-radius: 10px;
-
 }
 
 .vertical-menu button {
