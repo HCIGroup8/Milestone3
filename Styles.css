@@ -129,31 +129,29 @@ instruction{
 }
 
 .prefContent {
+  display: flex-grid;
   margin-top: 220px;
-  background-color: #4b4b4b;
   font-family: Arial, Helvetica, sans-serif;
-  height: 100%;
-  overflow: auto;
   margin-left: 10%;
   margin-right: 10%;
+  height: 100%;
 }
 
 .prefCard button {
   border-radius: 25px;
+  align-items: center;
   border: 2px solid #2E9CCA;
   background: #2E9CCA;
 
   text-align: center;
   font-size: 150%;
 
-  width: 400px;
-  height: 400px;
+  width: 25%;
+  height: 300px;
   float: left;
 
   padding: 25px;
-  margin-left: 10%;
-  margin-top: 100px;
-  align-items: relative;
+  margin: 3% 4%;
 }
 
 .prefCard input[type=checkbox] {
@@ -167,20 +165,9 @@ instruction{
 }
 
 .backBtn {
+  background-color: #BA3B46;
+  border-style: none;
   float: left;
-  font-size: 20px;
-
-  color: black;
-  background-color: #77b7d3;
-
-  border-color: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-
-  margin-left: 10px;
-  margin-top: 10px;
- 
 }
 
 
