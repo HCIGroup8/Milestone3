@@ -244,8 +244,8 @@
         <button id="cartBack" type="button" onclick="">&larr;</button>
         <h1>Cart</h1>
       </div>
-       
-      <div id="qtyInfo" class="popUpQty">
+    <div class="popUpQtyBack" id="qtyInfo"> 
+      <div class="popUpQty">
   
         <p style="font-size: 38px; text-align: center;">Current Qty:<a id="itemQtyjs"></a></p>
         <div class="qtyChg">
@@ -254,7 +254,7 @@
         </div>
         <button id="doneQty" type="button" onclick="closePopUpQty()")>Ok</button>
       </div>
-      
+    </div>
   
       <div class="cartPage"> 
        <div class="itemList">
@@ -354,24 +354,38 @@
   
           </div>
         </div>
+      <div class="paymentBoxBack"  id="creditInfo">
+        <div  class="paymentBox">
   
-  
-  
+            <h1 style="text-align: center; margin-top: 8%;">Credit Card Information</h1>
+    
+            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspName&nbsp&nbsp&nbsp&nbsp&nbsp :<input type="text" placeholder="Enter your Name here" name="enterNameBar"></input></p>
+    
+            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbspCredit Card No:<input type="number" placeholder="Enter Credit Card No. here" name="enterCreditCardNoBar"></input></p>
+    
+            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbspExpire Year&nbsp&nbsp :<input type="number" placeholder="Enter Expire Year here" name="enterExpireYrBar"></p>
+    
+            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCCV &nbsp&nbsp&nbsp&nbsp&nbsp:<input type="number" placeholder="Enter Ccv here" name="enterCcvBar"></p>
+    
+            <button id="creditInfobutton" type="button" onclick="closePopUpCredit()">Confirm</button>
+         
+        </div>
+      </div>
         <div class="paymentList">
-       
+  
            <h1 style="text-align: center;">Payment Method</h1>
             
               <form action="/action_page.php">
                 <p style="text-align: center;">Please select one below:</p>
-                <input type="radio" id="Pay On Delivery" name="PaymentMethod" value="Pay On Delivery">
-                <label for="Pay On Delivery" class="payOptionText"> Pay On Delivery</label><br>
-                <br>
-                <input type="radio" id="Pay Pal" name="PaymentMethod" value="Pay Pal">
-                <label for="Pay Pal" class="payOptionText">Pay Pal</label><br>
-                <br>
-                <input type="radio" id="Google Pay" name="PaymentMethod" value="Google Pay">
-                <label for="Google Pay" class="payOptionText">Google Pay</label><br>
-                <br>
+                <input type="radio" id="payOnDelivery" name="PaymentMethod" value="Pay On Delivery">
+                <label for="payOnDelivery" class="payOptionText"> Pay On Delivery</label>            
+                <br><br>
+                <input type="radio" id="creditCard" onclick="openPopUpCredit()" name="PaymentMethod" value="Credit Card">
+                <label for="creditCard" class="payOptionText">Credit Card</label>
+                <br><br>
+                <input type="radio" id="googlePay" name="PaymentMethod" value="Google Pay">
+                <label for="googlePay" class="payOptionText">Google Pay</label>
+                <br><br>
                 <input type="radio" id="other" name="PaymentMethod" value="other">
                 <label for="other" class="payOptionText">Other</label>
               </form>
