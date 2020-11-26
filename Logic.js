@@ -32,7 +32,7 @@ var mcdonaldsObj = {
     name: "McDonald's",
     img: "./Images/McDonald's_logo.png",
     description: "Your favourite place.",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 2.00,
     deliveryTime: "20-25",
     distance: 2,
     menu: {
@@ -105,7 +105,7 @@ var burgerKingObj = {
     description: "Eat like a king",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "5-10",
-    distance: 0.5,
+    distance: 3.00,
     menu: {
         meals: [
             {
@@ -174,7 +174,7 @@ var awObj = {
     name: "A & W",
     img: "./Images/A&W_logo.png",
     description: "A Family Place",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 4.00,
     deliveryTime: "10-15",
     distance: 1,
     menu: {
@@ -249,7 +249,7 @@ var dairyQueenObj = {
     name: "Dairy Queen",
     img: "./Images/DairyQueen_logo.png",
     description: "Treat yo self",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 5.00,
     deliveryTime: "10-15",
     distance: 5,
     menu: {
@@ -320,7 +320,7 @@ var kfcObj = {
     name: "KFC",
     img: "./Images/KFC_Logo.png",
     description: "Finger Lickin Good",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 3.00,
     deliveryTime: "1",
     distance: 2,
     menu: {
@@ -391,7 +391,7 @@ var popeyesObj = {
     name: "Popeye's",
     img: "./Images/Popeyes_logo.png",
     description: "Louisiana Chicken",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 4.00,
     deliveryTime: "30",
     distance: 15,
     menu: {
@@ -454,7 +454,7 @@ var marybrownsObj = {
     name: "Mary Brown's",
     img: "./Images/MaryBrowns_logo.png",
     description: "Made Fresh From Scratch",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 2.00,
     deliveryTime: "7",
     distance: 7,
     menu: {
@@ -521,7 +521,7 @@ var littlecaesarsObj = {
     name: "Little Caesar's",
     img: "./Images/LittleCaesars_logo.png",
     description: "Pizza! Pizza!",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 5.00,
     deliveryTime: "10",
     distance: 3,
     menu: {
@@ -580,7 +580,7 @@ var dominosObj = {
     name: "Domino's",
     img: "./Images/Dominos_logo.png",
     description: "Its what we do!",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 2.00,
     deliveryTime: "7",
     distance: 3,
     menu: {
@@ -647,7 +647,7 @@ var tacodelmarObj = {
     name: "Taco Del Mar",
     img: "./Images/TacoDelMar_logo.png",
     description: "Its taco time",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 7.00,
     deliveryTime: "4",
     distance: 1,
     menu: {
@@ -718,7 +718,7 @@ var qdobaObj = {
     name: "Qdoba",
     img: "./Images/Qdoba_logo.png",
     description: "Its what we do!",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 3.00,
     deliveryTime: "10",
     distance: 7,
     menu: {
@@ -825,7 +825,7 @@ function menuPageClick(name) {
 function menuBack() {
     menu.style.display = "none";
     rests.style.display = "inline";
-    resetDishDislpay();
+    resetDishDisplay();
 }
 
 function cartClick() {
@@ -1077,10 +1077,6 @@ function insertRestaurantInfo(restName) {
     insertMenuItems(currentMenu);
 }
 
-function testFunc(chosenDish){
-    console.log("Great scott it worked");
-    console.log(chosenDish);
-}
 
 function insertMenuItems(restMenu) {
     var menuItemsDiv = document.getElementById("MenuItems");
@@ -1099,7 +1095,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="testFunc(dish)">Add to Cart +</button>`;
+            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
