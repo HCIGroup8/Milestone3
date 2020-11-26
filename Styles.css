@@ -198,13 +198,23 @@ instruction{
   cursor: pointer;
 }
 
+.chip {
+  color: #495867; /* Black text color */
+  background-color: #f7f7ff;
+}
+
 #prefChipsDiv {
-  background-color: #f99201;
+  background-color: #577399;
+  border-radius: 12px;;
+
+  border-style: solid;
+  border-color: whitesmoke;
 }
 
 #menuHeader {
-  background-color: #f99201;
+  background-color: #ff3366;
   height: 50px;
+  position: sticky;
 }
 
 #RestaurantInfo {
@@ -213,6 +223,8 @@ instruction{
   display: flex;
   align-items: center;
   overflow-y: unset;
+  position: sticky;
+
 }
 
 #RestaurantInfo img{
@@ -224,15 +236,23 @@ instruction{
   font-size: 50px;
 }
 
-
 .restaurantDescription {
   margin-left: auto;
   padding-left: 100px;
+  position: sticky;
+
+}
+
+#MenuButtonsBG {
+  background-color: #000066;
+  width: 100%;
+  height:15%;
+  position: sticky;
+
 }
 
 #MenuButtons button {
-  
-  float: left;
+  justify-content: center;
   font-size: 15px;
 
   color: black;
@@ -244,16 +264,26 @@ instruction{
   border-radius: 15px;
 
   margin-left: 50px;
-  margin-top: 50px;
+  margin-top: 25px;
 
-  height: 100px;
+  height: 75px;
   width: 150px;
-
+  position: sticky;
 }
 
 #MenuButtons button:hover {
   background-color: rgb(173, 240, 156)
 }
+
+
+#menuItems {
+  display: block;
+  align-items: center;
+  background-color: green;
+  width: 100%;
+  height:15%;
+}
+
 /* End Cody CSS */
 
 /* Josh CSS */
@@ -268,19 +298,23 @@ instruction{
 #LittleCaesarsLink, 
 #DominosLink, 
 #TacoDelMarLink, 
-#QdobasLink  {
+#QdobaLink  {
   display: flex;
   align-items: center;
   overflow-y: unset;
   border-radius: 10px;
 }
 
+#restaurantsPage {
+  background-color: #f99201;
+}
+
 .vertical-menu button {
-  background-color: #f99201; /* Grey background color */
-  color: white; /* Black text color */
+  background-color: #BDD5EA; /* Grey background color */
+  color: #495867; /* Black text color */
   display: block; /* Make the links appear below each other */
   padding: 12px; /* Add some padding */
-  border: 1px solid white; /* Green border */
+  border: 1px solid #f7f7ff; /* Green border */
   text-decoration: none; /* Remove underline from links */
   width: 100%;
   height: 100px;
@@ -289,25 +323,14 @@ instruction{
 
 
 .vertical-menu {
-  width: 100%; /* Set a width if you like */
+  width: 100%; 
   height: 100%;
   
 }
 
-.vertical-menu a {
-  background-color: #f99201; /* Grey background color */
-  color: white; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  border: 1px solid white; /* Green border */
-  text-decoration: none; /* Remove underline from links */
-  width: 100%;
-  height: 100px;
-  overflow-y: auto;
-}
-
-.vertical-menu a:hover {
-  background-color: #ccc; /* Dark grey background on mouse-over */
+.vertical-menu button:hover {
+  background-color: #ff3366; /* Dark grey background on mouse-over */
+  opacity: 0.5;
 }
 
 .vertical-menu a.active {
