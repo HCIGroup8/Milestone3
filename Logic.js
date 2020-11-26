@@ -387,7 +387,7 @@ function removeItem2(){//to be deleted
    toRemove.remove();
   }
   
-  var currItemQuantity = 3; //for storing current deleteing item qty
+  var currItemQuantity = 1; //for storing current deleteing item qty
   document.getElementById("itemQtyjs").innerHTML = currItemQuantity;
   
   var bigMacQty = 3;
@@ -405,7 +405,7 @@ function removeItem2(){//to be deleted
   //this is for the popup quantity cusomization to show
   function openPopUpQty(qtyToShow){
     document.getElementById("qtyInfo").style.display = "block";
-    //currItemQtyEdit(qtyToShow);
+    currItemQtyEdit(qtyToShow);
   }
   
   //this is for the popup quantity cusomization to close
@@ -414,7 +414,13 @@ function removeItem2(){//to be deleted
       removeItem("item1"); //to be corrected
     }
      document.getElementById("qtyInfo").style.display = "none";
-  }    
+  }   
+  
+  window.onclick = function(event) {
+    if (event.target == document.getElementById("qtyInfo")) {
+      document.getElementById("qtyInfo").style.display = "none";
+    }
+  }
   
   //this is for the popup quantity customization for decrease 1 quantity
   function minusQty() {
@@ -437,8 +443,22 @@ function removeItem2(){//to be deleted
   }
   
   function currItemQtyEdit(toEdit){ //not able to use
-     currItemQuantity = toEdit.value;
+     currItemQuantity = document.getElementById(toEdit).innerHTML.value;
      document.getElementById("itemQtyjs").innerHTML = currItemQuantity;
+  }
+  
+  function openPopUpCredit(){
+    document.getElementById("creditInfo").style.display = "block";
+  }
+  
+  function closePopUpCredit() {
+     document.getElementById("creditInfo").style.display = "none";
+  } 
+  
+  window.onclick = function(event) {
+    if (event.target == document.getElementById("creditInfo")) {
+      document.getElementById("creditInfo").style.display = "none";
+    }
   }
 
 //end js for cart page
