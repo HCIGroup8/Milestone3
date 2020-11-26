@@ -8,6 +8,9 @@ var prefs = document.getElementById("categoriesPage");
 var rests = document.getElementById("restaurantsPage");
 var menu = document.getElementById("menuPage");
 var cart = document.getElementById("cartPage");
+var head = document.getElementById("mainHeader");
+
+var currentPage; 
 
 // Array holding names of selected cuisine preferences
 var selectedPrefs = [];
@@ -792,11 +795,7 @@ var qdobaObj = {
 function categoriesPageClick() {
     addr.style.display = "none";
     prefs.style.display = "inline";
-}
-
-function categoriesPageBack() {
-    prefs.style.display = "none";
-    addr.style.display = "inline";
+    currentPage = prefs;
 }
 
 function resturantsPageClick() {
@@ -809,33 +808,53 @@ function resturantsPageClick() {
     showPreferenceChips();
     prefs.style.display = "none";
     rests.style.display = "inline";
-}
-
-function restaurantsPageBack() {
-    rests.style.display = "none";
-    prefs.style.display = "inline";
+    currentPage = rests;
 }
 
 function menuPageClick(name) {
     rests.style.display = "none";
     menu.style.display = "inline";
     insertRestaurantInfo(name);
-}
-
-function menuBack() {
-    menu.style.display = "none";
-    rests.style.display = "inline";
-    resetDishDisplay();
+    currentPage = menu;
 }
 
 function cartClick() {
     menu.style.display = "none";
     cart.style.display = "inline";
+    currentPage = menu;
 }
 
-function cartBack() {
-    cart.style.display = "none";
-    menu.style.display = "inline"
+function prevPage() {
+    switch(currentPage) {
+        case addr:    
+            break;
+
+        case prefs:
+            prefs.style.display = "none";
+            addr.style.display = "inline";
+            currentPage = addr;
+            break;
+
+        case rests:
+            rests.style.display = "none";
+            prefs.style.display = "inline";
+            currentPage = prefs;
+            break;
+
+        case menu:
+            menu.style.display = "none";
+            rests.style.display = "inline";
+            currentPage = rests;
+            break;
+    
+        case cart:
+            cart.style.display = "none";
+            menu.style.display = "inline"
+            currentPage = menu;
+            break;
+        default:
+            break;
+    }
 }
 
 // -------------------------------------------------------------------------

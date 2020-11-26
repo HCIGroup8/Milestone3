@@ -15,7 +15,11 @@ header {
     font-size: 35px;
     color: white;
   }
- 
+
+#mainHeader {
+  display: block;
+}
+
 instruction{
     text-align: center;
   }
