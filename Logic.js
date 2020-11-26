@@ -12,23 +12,85 @@ var cart = document.getElementById("cartPage");
 // Array holding names of selected cuisine preferences
 var selectedPrefs = [];
 
-const MAX_FEE = 1500;
+const MAX_FEE = 15;
 
 // Restaurant Data Objects
 var mcdonaldsObj = {
     name: "McDonald's",
     img: "./Images/McDonald's_logo.png",
     description: "Your favourite place.",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "20-25",
-    distance: 2
+    distance: 2,
+    menu: {
+        meals: [
+            {
+                name: "Big Mac Combo",
+                price: 7.75
+            },
+            {
+                name: "Quarter Pounder Combo",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Big Mac",
+                price: 5.00
+            },
+            {
+                name: "Quarter Pounder",
+                price: 4.50
+            },
+            {
+                name: "McChicken",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Fries",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Apple Pie",
+                price: 3.50
+            },
+            {
+                name: "McFlurry",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Happy Meal",
+                price: 2.50
+            },
+            {
+                name: "Junior Chicken",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var burgerKingObj = {
     name: "Burger King",
     img: "./Images/BurgerKing_logo.png",
     description: "Eat like a king",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "5-10",
     distance: 0.5
 };
@@ -37,7 +99,7 @@ var awObj = {
     name: "A & W",
     img: "./Images/A&W_logo.png",
     description: "A Family Place",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10-15",
     distance: 1
 };
@@ -46,7 +108,7 @@ var dairyQueenObj = {
     name: "Dairy Queen",
     img: "./Images/DairyQueen_logo.png",
     description: "Treat yo self",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10-15",
     distance: 5
 };
@@ -55,7 +117,7 @@ var kfcObj = {
     name: "KFC",
     img: "./Images/KFC_Logo.png",
     description: "Finger Lickin Good",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "1",
     distance: 2
 };
@@ -64,7 +126,7 @@ var popeyesObj = {
     name: "Popeye's",
     img: "./Images/Popeyes_logo.png",
     description: "Louisiana Chicken",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "30",
     distance: 15
 };
@@ -73,7 +135,7 @@ var marybrownsObj = {
     name: "Mary Brown's",
     img: "./Images/MaryBrowns_logo.png",
     description: "Made Fresh From Scratch",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "7",
     distance: 7
 };
@@ -82,7 +144,7 @@ var littlecaesarsObj = {
     name: "Little Caesar's",
     img: "./Images/LittleCaesars_logo.png",
     description: "Pizza! Pizza!",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10",
     distance: 3
 };
@@ -91,7 +153,7 @@ var dominosObj = {
     name: "Domino's",
     img: "./Images/Dominos_logo.png",
     description: "Its what we do!",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "7",
     distance: 3
 };
@@ -100,7 +162,7 @@ var tacodelmarObj = {
     name: "Taco Del Mar",
     img: "./Images/TacoDelMar_logo.png",
     description: "Its taco time",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "4",
     distance: 1
 };
@@ -109,7 +171,7 @@ var qdobaObj = {
     name: "Qdoba",
     img: "./Images/Qdoba_logo.png",
     description: "Its what we do!",
-    deliveryFee: Math.random() * MAX_FEE,
+    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10",
     distance: 7
 };
@@ -346,11 +408,42 @@ function insertRestaurantInfo(restName) {
     var infoHTML = ""; // string to fill with HTML code
 
     switch (restName) {
-        case value:
-            
+        case 'mcdonalds':
+            restaurant = mcdonaldsObj;
             break;
-    
+        case 'burgerking':
+            restaurant = burgerKingObj;
+            break;
+        case 'aandw':
+            restaurant = awObj;
+            break;
+        case 'dairyqueen':
+            restaurant = dairyQueenObj;
+            break;
+        case 'kfc':
+            restaurant = kfcObj;
+            break;
+        case 'popeyes':
+            restaurant = popeyesObj;
+            break;
+        case 'marybrowns':
+            restaurant = marybrownsObj;
+            break;
+        case 'littlecaesars':
+            restaurant = littlecaesarsObj;
+            break;
+        case 'dominos':
+            restaurant = dominosObj;
+            break;
+        case 'tacodelmar':
+            restaurant = tacodelmarObj;
+            break;
+        case 'qdoba':
+            restaurant = qdobaObj;
+            break;
         default:
+            // this should never execute, but....
+            // display mcdonalds just in case
             restaurant = mcdonaldsObj;
             break;
     }
@@ -362,15 +455,120 @@ function insertRestaurantInfo(restName) {
     infoHTML += `<div class="restaurantDescription">`;
     infoHTML += `<p>Distance: ${restaurant.distance}km away</p>`;
     infoHTML += `<p>Est. Delivery Time: 20-25 min</p>`;
-    infoHTML += `<p>Delivery Fee: $${restaurant.deliveryFee/100}</p>`;
+    infoHTML += `<p>Delivery Fee: $${restaurant.deliveryFee}</p>`;
     infoHTML += `</div>`;
 
     // Insert the html into the document
     restInfoDiv.innerHTML = infoHTML;
+
+    // Call a function to insert the restaurants menu
+    insertMenuItems(restaurant.menu);
 }
 
-function insertMenuItems() {
+function insertMenuItems(menu) {
     var menuItemsDiv = document.getElementById("MenuItems");
+    var outputHTML = "";
+    var dish; // current dish being examined
+    
+    // Add all meals
+    for(dish of menu.meals){
+        outputHTML += `<div class=item>`;
+        outputHTML += `<div class="itemImg">`;
+        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+        outputHTML += `</div>`;
+        outputHTML += '<div class=itemText>';
+        outputHTML += `<p class="foodName">${dish.name}</p>`;
+        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+        outputHTML += `</div>`;
+        outputHTML += `<div class="itemAdd">`;
+        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+        outputHTML += `</div>`;
+        outputHTML += `</div>`;
+    }
+
+    // Add all mains
+    for(dish of menu.mains){
+        outputHTML += `<div class=item>`;
+        outputHTML += `<div class="itemImg">`;
+        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+        outputHTML += `</div>`;
+        outputHTML += '<div class=itemText>';
+        outputHTML += `<p class="foodName">${dish.name}</p>`;
+        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+        outputHTML += `</div>`;
+        outputHTML += `<div class="itemAdd">`;
+        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+        outputHTML += `</div>`;
+        outputHTML += `</div>`;
+    }
+
+    // Add all sides
+    for(dish of menu.sides){
+        outputHTML += `<div class=item>`;
+        outputHTML += `<div class="itemImg">`;
+        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+        outputHTML += `</div>`;
+        outputHTML += '<div class=itemText>';
+        outputHTML += `<p class="foodName">${dish.name}</p>`;
+        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+        outputHTML += `</div>`;
+        outputHTML += `<div class="itemAdd">`;
+        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+        outputHTML += `</div>`;
+        outputHTML += `</div>`;
+    }
+
+    // Add all beverages
+    for(dish of menu.beverages){
+        outputHTML += `<div class=item>`;
+        outputHTML += `<div class="itemImg">`;
+        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+        outputHTML += `</div>`;
+        outputHTML += '<div class=itemText>';
+        outputHTML += `<p class="foodName">${dish.name}</p>`;
+        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+        outputHTML += `</div>`;
+        outputHTML += `<div class="itemAdd">`;
+        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+        outputHTML += `</div>`;
+        outputHTML += `</div>`;
+    }
+
+    // Add all desserts
+    for(dish of menu.desserts){
+        outputHTML += `<div class=item>`;
+        outputHTML += `<div class="itemImg">`;
+        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+        outputHTML += `</div>`;
+        outputHTML += '<div class=itemText>';
+        outputHTML += `<p class="foodName">${dish.name}</p>`;
+        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+        outputHTML += `</div>`;
+        outputHTML += `<div class="itemAdd">`;
+        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+        outputHTML += `</div>`;
+        outputHTML += `</div>`;
+    }
+
+    // Add all specials
+    for(dish of menu.specials){
+        outputHTML += `<div class=item>`;
+        outputHTML += `<div class="itemImg">`;
+        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+        outputHTML += `</div>`;
+        outputHTML += '<div class=itemText>';
+        outputHTML += `<p class="foodName">${dish.name}</p>`;
+        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+        outputHTML += `</div>`;
+        outputHTML += `<div class="itemAdd">`;
+        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+        outputHTML += `</div>`;
+        outputHTML += `</div>`;
+    }
+
+
+    // Insert the food items into the document
+    menuItemsDiv.innerHTML = outputHTML;
 
 }
 

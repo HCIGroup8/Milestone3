@@ -122,16 +122,20 @@
                 </button>
             </div>
         </div>
-
     </div>
 
     <!-- Restaurant Page -->
-    <div id="restaurantsPage">
+    <div id="restaurantsPage"> 
         <!-- <h1>List of Restaurants</h1> -->
+      <div id="restaurantsHeader">
         <button type="button" class="backBtn" onclick="restaurantsPageBack()">&larr;</button>
+
         <div id="prefChipsDiv">
             <!-- This div holds the preference chips -->
         </div>
+      </div>
+      
+      <div id="restaurantsOptions">
         <div id="restaurantsDiv" class="vertical-menu">
             <div id="fastfood" class="fast-food-resturants">
                 <button onclick="menuPageClick('mcdonalds')" id="McDonaldsLink">
@@ -185,8 +189,10 @@
                     <p>Qdoba</p>
                 </button>
             </div>
-        </div>    
-    </div>
+         </div>    
+      </div>
+   </div> 
+
 
     <!-- Menu Page -->
     <div id="menuPage">
@@ -197,17 +203,9 @@
         </button>
       </div>
       <div id="RestaurantInfo">
-        <!-- <img src="./Images/McDonald's_logo.png" width=150px height=150px style="margin-right: 100px;">
-        <p id="RestaurantName">McDonalds </p>
-        <p style="padding-left: 300px;">Restaurant Description...</p>
-        <div class="restaurantDescription">
-          <p> Delivery Fee: $3</p>
-          <p> 2km away Estimated Delivery Time: 20-25 min</p>
-          <p>$3 delivery fee</p>
-          
-        </div> -->
+       <!-- This div holds all of the info about the restauran -->
       </div>
-      <div id="MenuButtonsBG">
+      <div id="MenuButtonsContainer">
         <div id="MenuButtons"> 
           <button type="button">
             Meals
@@ -229,22 +227,35 @@
           </button>
         </div>
       </div> 
-<<<<<<< HEAD
-      <!-- <div id="MenuItems">
-        <img src="./Images/bigmac.jpeg" width="70px" height="70px" style="margin-right: 25px;">
-        <p>Big Mac</p>
-      </div> -->
-
-
-=======
       <div id="MenuItems">
-          <p>McDonald's</p>
+
+
+
+
+        <div class=item> 
+          <div class="itemImg">
+            <img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">
+          </div>
+          <div class=itemText>
+            <p class="foodName">Big Mac</p>
+            <p class="foodPrice">$0.00</p>
+          </div>
+          <div class="itemAdd">
+            <button type="button" onclick="">Add to Cart +</button>
+          </div>
+        </div>
         
+          
+
+
+
+
+
+
       </div>
-      
->>>>>>> 2c1fc06c166f044181ae8c4826036dff7180f637
     </div>
-    </div>  
+
+     
 
     <!-- Cart -->
     <div id="cartPage">
