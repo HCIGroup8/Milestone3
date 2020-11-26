@@ -133,23 +133,27 @@ instruction{
   background-color: #4b4b4b;
   font-family: Arial, Helvetica, sans-serif;
   height: 100%;
+  overflow: auto;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .prefCard button {
-  border-radius: 10px;
+  border-radius: 25px;
   border: 2px solid #2E9CCA;
   background: #2E9CCA;
 
   text-align: center;
   font-size: 150%;
 
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
   float: left;
 
   padding: 25px;
-  margin-left: 100px;
+  margin-left: 10%;
   margin-top: 100px;
+  align-items: relative;
 }
 
 .prefCard input[type=checkbox] {
