@@ -132,6 +132,7 @@ function resturantsPageClick() {
     getPreferences();
     if(selectedPrefs.length == 0){
         selectAllRest();
+        getPreferences();
     }
     showValidRestaurants();
     showPreferenceChips();
@@ -144,10 +145,10 @@ function restaurantsPageBack() {
     prefs.style.display = "inline";
 }
 
-function menuPageClick() {
+function menuPageClick(name) {
     rests.style.display = "none";
     menu.style.display = "inline";
-    insertRestaurantInfo();
+    insertRestaurantInfo(name);
 }
 
 function menuBack() {
@@ -338,11 +339,21 @@ function removePreference(prefName){
 //
 // Purpose: dynamically generate the restaurant info to display 
 // ---------------------------------------------------------------
-function insertRestaurantInfo() {
+function insertRestaurantInfo(restName) {
     // Get the containing div from the document
     var restInfoDiv = document.getElementById("RestaurantInfo");
-    var restaurant = burgerKingObj; // choose restaurant data to fill
+    var restaurant; // restaurant object we care about
     var infoHTML = ""; // string to fill with HTML code
+
+    switch (restName) {
+        case value:
+            
+            break;
+    
+        default:
+            restaurant = mcdonaldsObj;
+            break;
+    }
 
     // Build up the string of html to insert
     infoHTML += `<img src="${restaurant.img}" width=70px height=70px style="margin-right:25px">`;
@@ -356,6 +367,11 @@ function insertRestaurantInfo() {
 
     // Insert the html into the document
     restInfoDiv.innerHTML = infoHTML;
+}
+
+function insertMenuItems() {
+    var menuItemsDiv = document.getElementById("MenuItems");
+
 }
 
 
