@@ -12,9 +12,22 @@ var cart = document.getElementById("cartPage");
 // Array holding names of selected cuisine preferences
 var selectedPrefs = [];
 
+// Reference to current menu of restaurant user is looking at
+var currentMenu = null;
+
 const MAX_FEE = 15;
 
+// Used for displaying/hiding menu options
+var displayMeals = true;
+var displayMains = true;
+var displaySides = true;
+var displayBeverages = true;
+var displayDesserts = true;
+var displaySpecials = true;
+
+
 // Restaurant Data Objects
+
 var mcdonaldsObj = {
     name: "McDonald's",
     img: "./Images/McDonald's_logo.png",
@@ -92,7 +105,69 @@ var burgerKingObj = {
     description: "Eat like a king",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "5-10",
-    distance: 0.5
+    distance: 0.5,
+    menu: {
+        meals: [
+            {
+                name: "Whopper Meal",
+                price: 7.75
+            },
+            {
+                name: "Bacon Whopper Meal",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Whopper",
+                price: 5.00
+            },
+            {
+                name: "Quarter Pounder",
+                price: 4.50
+            },
+            {
+                name: "Whopper Jr",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Fries",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Apple Pie",
+                price: 3.50
+            },
+            {
+                name: "Vanilla Cone",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "BBQ Bacon Whopper",
+                price: 2.50
+            },
+            {
+                name: "Cheeseburger",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var awObj = {
@@ -101,7 +176,73 @@ var awObj = {
     description: "A Family Place",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10-15",
-    distance: 1
+    distance: 1,
+    menu: {
+        meals: [
+            {
+                name: "Papa Burger Meal",
+                price: 7.75
+            },
+            {
+                name: "Teen Burger Meal",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Papa Burger",
+                price: 5.00
+            },
+            {
+                name: "Mama Burger",
+                price: 4.50
+            },
+            {
+                name: "Teen Burger",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Fries",
+                price: 2.00
+            },
+            {
+                name: "Onion Rings",
+                price: 3.50
+            }
+        ],
+        beverages: [
+            {
+                name: "Root Beer",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Apple Pie",
+                price: 3.50
+            },
+            {
+                name: "Root Beer Float",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Baby Burger",
+                price: 2.50
+            },
+            {
+                name: "Junior Burger",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var dairyQueenObj = {
@@ -110,7 +251,69 @@ var dairyQueenObj = {
     description: "Treat yo self",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10-15",
-    distance: 5
+    distance: 5,
+    menu: {
+        meals: [
+            {
+                name: "Chicken Strip Combo",
+                price: 7.75
+            },
+            {
+                name: "Poutine Meal",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Poutine",
+                price: 5.00
+            },
+            {
+                name: "Chicken Strips",
+                price: 4.50
+            },
+            {
+                name: "Cheeseburger",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Fries",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Milkshake",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Blizzard",
+                price: 3.50
+            },
+            {
+                name: "Dilly Bar",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Fudge Brownie Blizzard",
+                price: 2.50
+            },
+            {
+                name: "3pc Chicken Strips",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var kfcObj = {
@@ -119,7 +322,69 @@ var kfcObj = {
     description: "Finger Lickin Good",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "1",
-    distance: 2
+    distance: 2,
+    menu: {
+        meals: [
+            {
+                name: "12pc Chicken Meal",
+                price: 7.75
+            },
+            {
+                name: "8pc Chicken Meal",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Popcorn Chicken",
+                price: 5.00
+            },
+            {
+                name: "Chicken Tenders",
+                price: 4.50
+            },
+            {
+                name: "Chicken Wings",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Mashed Potatoes",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Chocolate Chip Cake",
+                price: 3.50
+            },
+            {
+                name: "Cookies",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Party Bucket",
+                price: 2.50
+            },
+            {
+                name: "Hot Wings",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var popeyesObj = {
@@ -128,7 +393,61 @@ var popeyesObj = {
     description: "Louisiana Chicken",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "30",
-    distance: 15
+    distance: 15,
+    menu: {
+        meals: [
+            {
+                name: "Chicken Sandwich Combo",
+                price: 7.75
+            },
+            {
+                name: "Signature Chicken Combo",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Chicken Sandwich",
+                price: 5.00
+            },
+            {
+                name: "6pc Chicken Tenders",
+                price: 4.50
+            },
+            {
+                name: "4pc McChicken",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Fries",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Apple Pie",
+                price: 3.50
+            }
+        ],
+        specials: [
+            {
+                name: "Junior Chicken Sandwich",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var marybrownsObj = {
@@ -137,7 +456,65 @@ var marybrownsObj = {
     description: "Made Fresh From Scratch",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "7",
-    distance: 7
+    distance: 7,
+    menu: {
+        meals: [
+            {
+                name: "Big Mary Combo",
+                price: 7.75
+            },
+            {
+                name: "Spicy Big Mary Combo",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Big Mary",
+                price: 5.00
+            },
+            {
+                name: "Popcorn Chicken",
+                price: 4.50
+            },
+            {
+                name: "Chicken Fingers",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Taters",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Apple Pie",
+                price: 3.50
+            },
+            {
+                name: "Brownies",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Chicken Fingers w. Taters",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var littlecaesarsObj = {
@@ -146,7 +523,57 @@ var littlecaesarsObj = {
     description: "Pizza! Pizza!",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10",
-    distance: 3
+    distance: 3,
+    menu: {
+        meals: [
+            {
+                name: "Hawaiian Pizza with Cheesebread",
+                price: 7.75
+            }
+        ],
+        mains: [
+            {
+                name: "Great Canadian",
+                price: 5.00
+            },
+            {
+                name: "Meatlovers",
+                price: 4.50
+            },
+            {
+                name: "Cheese",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Cheese Bread",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Cinnamon Bites",
+                price: 3.50
+            }
+        ],
+        specials: [
+            {
+                name: "Garlic Cheesy Bread",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var dominosObj = {
@@ -155,7 +582,65 @@ var dominosObj = {
     description: "Its what we do!",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "7",
-    distance: 3
+    distance: 3,
+    menu: {
+        meals: [
+            {
+                name: "Cheese Pizza Combo",
+                price: 7.75
+            }
+        ],
+        mains: [
+            {
+                name: "Pepperoni Pizza",
+                price: 5.00
+            },
+            {
+                name: "Hawaiin Pizza",
+                price: 4.50
+            },
+            {
+                name: "Cheese Pizza",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Cheese Bread",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Cinnamon Bites",
+                price: 3.50
+            },
+            {
+                name: "Chocolate Lava Cake",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Mini Pizza",
+                price: 2.50
+            },
+            {
+                name: "Parmasean Bread",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var tacodelmarObj = {
@@ -164,7 +649,69 @@ var tacodelmarObj = {
     description: "Its taco time",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "4",
-    distance: 1
+    distance: 1,
+    menu: {
+        meals: [
+            {
+                name: "Street Taco Combo",
+                price: 7.75
+            },
+            {
+                name: "Bean Burrito Combo",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Classic Tacos",
+                price: 5.00
+            },
+            {
+                name: "Baked Burrito",
+                price: 4.50
+            },
+            {
+                name: "Taco Salad",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Nachos",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Apple Pie",
+                price: 3.50
+            },
+            {
+                name: "Churro",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Burrito Bowl",
+                price: 2.50
+            },
+            {
+                name: "Loaded Nachos",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 var qdobaObj = {
@@ -173,7 +720,69 @@ var qdobaObj = {
     description: "Its what we do!",
     deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
     deliveryTime: "10",
-    distance: 7
+    distance: 7,
+    menu: {
+        meals: [
+            {
+                name: "Taco Combo",
+                price: 7.75
+            },
+            {
+                name: "Fajita Combo",
+                price: 6.50
+            }
+        ],
+        mains: [
+            {
+                name: "Burrito Bowl",
+                price: 5.00
+            },
+            {
+                name: "Fish Tacos",
+                price: 4.50
+            },
+            {
+                name: "Chicken Bowl",
+                price: 2.50
+            }
+        ],
+        sides: [
+            {
+                name: "Chips & Queso",
+                price: 2.00
+            }
+        ],
+        beverages: [
+            {
+                name: "Pepsi",
+                price: 1.00
+            },
+            {
+                name: "Coke",
+                price: 1.00
+            }
+        ],
+        desserts: [
+            {
+                name: "Apple Pie",
+                price: 3.50
+            },
+            {
+                name: "Churro",
+                price: 4.00
+            }
+        ],
+        specials: [
+            {
+                name: "Mini Fajitas",
+                price: 2.50
+            },
+            {
+                name: "Nacho Platter",
+                price: 2.50
+            }
+        ]
+    }
 };
 
 // ------------
@@ -216,6 +825,7 @@ function menuPageClick(name) {
 function menuBack() {
     menu.style.display = "none";
     rests.style.display = "inline";
+    resetDishDislpay();
 }
 
 function cartClick() {
@@ -461,118 +1071,186 @@ function insertRestaurantInfo(restName) {
     // Insert the html into the document
     restInfoDiv.innerHTML = infoHTML;
 
+    currentMenu = restaurant.menu;
+
     // Call a function to insert the restaurants menu
-    insertMenuItems(restaurant.menu);
+    insertMenuItems(currentMenu);
 }
 
-function insertMenuItems(menu) {
+function testFunc(chosenDish){
+    console.log("Great scott it worked");
+    console.log(chosenDish);
+}
+
+function insertMenuItems(restMenu) {
     var menuItemsDiv = document.getElementById("MenuItems");
     var outputHTML = "";
     var dish; // current dish being examined
     
-    // Add all meals
-    for(dish of menu.meals){
-        outputHTML += `<div class=item>`;
-        outputHTML += `<div class="itemImg">`;
-        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
-        outputHTML += `</div>`;
-        outputHTML += '<div class=itemText>';
-        outputHTML += `<p class="foodName">${dish.name}</p>`;
-        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
-        outputHTML += `</div>`;
-        outputHTML += `<div class="itemAdd">`;
-        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
-        outputHTML += `</div>`;
-        outputHTML += `</div>`;
+    if(displayMeals){
+        // Add all meals
+        for(dish of restMenu.meals){
+            outputHTML += `<div class=item>`;
+            outputHTML += `<div class="itemImg">`;
+            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `</div>`;
+            outputHTML += '<div class=itemText>';
+            outputHTML += `<p class="foodName">${dish.name}</p>`;
+            outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+            outputHTML += `</div>`;
+            outputHTML += `<div class="itemAdd">`;
+            outputHTML += `<button type="button" onclick="testFunc(dish)">Add to Cart +</button>`;
+            outputHTML += `</div>`;
+            outputHTML += `</div>`;
+        }
+    }
+    
+
+    if(displayMains){
+        // Add all mains
+        for(dish of restMenu.mains){
+            outputHTML += `<div class=item>`;
+            outputHTML += `<div class="itemImg">`;
+            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `</div>`;
+            outputHTML += '<div class=itemText>';
+            outputHTML += `<p class="foodName">${dish.name}</p>`;
+            outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+            outputHTML += `</div>`;
+            outputHTML += `<div class="itemAdd">`;
+            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `</div>`;
+            outputHTML += `</div>`;
+        }
     }
 
-    // Add all mains
-    for(dish of menu.mains){
-        outputHTML += `<div class=item>`;
-        outputHTML += `<div class="itemImg">`;
-        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
-        outputHTML += `</div>`;
-        outputHTML += '<div class=itemText>';
-        outputHTML += `<p class="foodName">${dish.name}</p>`;
-        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
-        outputHTML += `</div>`;
-        outputHTML += `<div class="itemAdd">`;
-        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
-        outputHTML += `</div>`;
-        outputHTML += `</div>`;
+    if(displaySides){
+        // Add all sides
+        for(dish of restMenu.sides){
+            outputHTML += `<div class=item>`;
+            outputHTML += `<div class="itemImg">`;
+            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `</div>`;
+            outputHTML += '<div class=itemText>';
+            outputHTML += `<p class="foodName">${dish.name}</p>`;
+            outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+            outputHTML += `</div>`;
+            outputHTML += `<div class="itemAdd">`;
+            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `</div>`;
+            outputHTML += `</div>`;
+        }
     }
 
-    // Add all sides
-    for(dish of menu.sides){
-        outputHTML += `<div class=item>`;
-        outputHTML += `<div class="itemImg">`;
-        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
-        outputHTML += `</div>`;
-        outputHTML += '<div class=itemText>';
-        outputHTML += `<p class="foodName">${dish.name}</p>`;
-        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
-        outputHTML += `</div>`;
-        outputHTML += `<div class="itemAdd">`;
-        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
-        outputHTML += `</div>`;
-        outputHTML += `</div>`;
+    if(displayBeverages){
+        // Add all beverages
+        for(dish of restMenu.beverages){
+            outputHTML += `<div class=item>`;
+            outputHTML += `<div class="itemImg">`;
+            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `</div>`;
+            outputHTML += '<div class=itemText>';
+            outputHTML += `<p class="foodName">${dish.name}</p>`;
+            outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+            outputHTML += `</div>`;
+            outputHTML += `<div class="itemAdd">`;
+            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `</div>`;
+            outputHTML += `</div>`;
+        }
     }
 
-    // Add all beverages
-    for(dish of menu.beverages){
-        outputHTML += `<div class=item>`;
-        outputHTML += `<div class="itemImg">`;
-        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
-        outputHTML += `</div>`;
-        outputHTML += '<div class=itemText>';
-        outputHTML += `<p class="foodName">${dish.name}</p>`;
-        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
-        outputHTML += `</div>`;
-        outputHTML += `<div class="itemAdd">`;
-        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
-        outputHTML += `</div>`;
-        outputHTML += `</div>`;
+
+    if(displayDesserts){
+        // Add all desserts
+        for(dish of restMenu.desserts){
+            outputHTML += `<div class=item>`;
+            outputHTML += `<div class="itemImg">`;
+            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `</div>`;
+            outputHTML += '<div class=itemText>';
+            outputHTML += `<p class="foodName">${dish.name}</p>`;
+            outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+            outputHTML += `</div>`;
+            outputHTML += `<div class="itemAdd">`;
+            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `</div>`;
+            outputHTML += `</div>`;
+        }
     }
 
-    // Add all desserts
-    for(dish of menu.desserts){
-        outputHTML += `<div class=item>`;
-        outputHTML += `<div class="itemImg">`;
-        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
-        outputHTML += `</div>`;
-        outputHTML += '<div class=itemText>';
-        outputHTML += `<p class="foodName">${dish.name}</p>`;
-        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
-        outputHTML += `</div>`;
-        outputHTML += `<div class="itemAdd">`;
-        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
-        outputHTML += `</div>`;
-        outputHTML += `</div>`;
-    }
 
-    // Add all specials
-    for(dish of menu.specials){
-        outputHTML += `<div class=item>`;
-        outputHTML += `<div class="itemImg">`;
-        outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
-        outputHTML += `</div>`;
-        outputHTML += '<div class=itemText>';
-        outputHTML += `<p class="foodName">${dish.name}</p>`;
-        outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
-        outputHTML += `</div>`;
-        outputHTML += `<div class="itemAdd">`;
-        outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
-        outputHTML += `</div>`;
-        outputHTML += `</div>`;
+    if(displaySpecials){
+        // Add all specials
+        for(dish of restMenu.specials){
+            outputHTML += `<div class=item>`;
+            outputHTML += `<div class="itemImg">`;
+            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `</div>`;
+            outputHTML += '<div class=itemText>';
+            outputHTML += `<p class="foodName">${dish.name}</p>`;
+            outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
+            outputHTML += `</div>`;
+            outputHTML += `<div class="itemAdd">`;
+            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `</div>`;
+            outputHTML += `</div>`;
+        }
     }
-
 
     // Insert the food items into the document
     menuItemsDiv.innerHTML = outputHTML;
 
 }
 
+function refineDishDisplay(menuCatagory) {
+    falsifyDishDisplay();
+    switch(menuCatagory) {
+        case "meals": 
+            displayMeals = true;
+            break;
+        case "mains":
+            displayMains = true;
+            break;
+        case "sides": 
+            displaySides = true
+            break;
+        case "beverages":
+            displayBeverages = true;
+            break;
+        case "desserts":
+            displayDesserts = true;
+            break;
+        case "specials":
+            displaySpecials = true;
+            break;
+        case "all":
+            resetDishDisplay();
+            break;
+        default:
+            break;
+    }
+    
+    insertMenuItems(currentMenu);
+}
 
+function falsifyDishDisplay(){
+    displayMeals = false;
+    displayMains = false;
+    displaySides = false;
+    displayBeverages = false;
+    displayDesserts = false;
+    displaySpecials = false;
+}
+
+function resetDishDisplay(){
+    displayMeals = true;
+    displayMains = true;
+    displaySides = true;
+    displayBeverages = true;
+    displayDesserts = true;
+    displaySpecials = true;
+}
 // js for cart page below
 
 function removeItem2(){//to be deleted
