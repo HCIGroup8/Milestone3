@@ -133,7 +133,7 @@ instruction{
   margin-right: 25px;
   margin-bottom: 10px;
   color: black;
-  background-color: #77b7d3;
+  background-color: beige;
 
   border-color: black;
   border-style: solid;
@@ -145,7 +145,7 @@ instruction{
   margin-right: 25px;
   margin-bottom: 10px;
   color: black;
-  background-color: #77b7d3;
+  background-color: beige;
 
   border-color: black;
   border-style: solid;
@@ -159,14 +159,15 @@ instruction{
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 10%;
   margin-right: 10%;
-  height: 100%;
+  height: 180%;
+  background-color:#495867; 
 }
 
 .prefCard button {
   border-radius: 25px;
   align-items: center;
-  border: 2px solid #2E9CCA;
-  background: #2E9CCA;
+  border: 2px solid beige;
+  background: beige;
 
   text-align: center;
   font-size: 150%;
@@ -298,7 +299,7 @@ instruction{
 
 
 #menuHeader {
-  background-color: #293132;
+  background-color: #495867;
   height: 5%;
   position: sticky;
   top: 0;
@@ -330,7 +331,7 @@ instruction{
 
 #MenuButtonsContainer {
   display: flex;
-  background-color: #2F195F;
+  background-color: #495867;
   width: 100%;
   height:10%;
   position: sticky;
@@ -374,7 +375,7 @@ instruction{
   /* height: 15%; */
 }
 
-#MenuItems {
+.item {
   background-color: #FFEEDB;
   display: block;
   border-color: #000000;
@@ -398,15 +399,25 @@ instruction{
   margin-top: 2.5%;
   margin-right: 2%;
   height: 20px;
-
+  width: 100px;
 }
 
 .itemAdd button {
-  background-color: green;
+  background-color: #f99201;
   border-radius: 12px;
   border-style: solid;
-  border-color: green;
-  color: white;
+  color: black;
+}
+
+.itemAdd button:hover {
+  background-color: #BA3B46
+}
+
+.itemAdd button:active {
+  height: 25px;
+  width: 120px;
+  margin-left: -10px;
+  margin-bottom: -5px;
 }
 
 
@@ -742,3 +753,9 @@ instruction{
     border-radius: 10px 10px 10px 10px;
 }
 /* end css for cartPage*/
+
+
+.dishCustomization {
+  display:none;
+}
+

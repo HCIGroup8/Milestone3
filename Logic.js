@@ -21,6 +21,8 @@ var selectedDishes = [];
 // Reference to current menu of restaurant user is looking at
 var currentMenu = null;
 
+var currentRestaurant = null;
+
 const MAX_FEE = 15;
 
 // Used for displaying/hiding menu options
@@ -45,13 +47,11 @@ var mcdonaldsObj = {
         meals: [
             {
                 name: "Big Mac Combo",
-                price: 7.75,
-                fID: "01"
+                price: 7.75
             },
             {
                 name: "Quarter Pounder Combo",
-                price: 6.50,
-                fID: "02"
+                price: 6.5
             }
         ],
         mains: [
@@ -898,6 +898,7 @@ function cartClick() {
     menu.style.display = "none";
     cart.style.display = "inline";
     currentPage = cart;
+    fillCart();
 }
 
 function prevPage() {
@@ -1070,7 +1071,7 @@ function showValidRestaurants() {
 function showPreferenceChips(){
     var chipDiv = document.getElementById("prefChipsDiv");
     var chipHTML = "";
-    var chipPlus = "<div class=\"chip\" onclick=\"restaurantsPageBack()\"><span>&plus;</span></div>"
+    var chipPlus = "<div class=\"chip\" onclick=\"prevPage()\"><span>&plus;</span></div>"
 
     for(var i = 0; i < selectedPrefs.length; i++){
         chipHTML += `<div class=\"chip\">
@@ -1171,12 +1172,36 @@ function insertRestaurantInfo(restName) {
     // Insert the html into the document
     restInfoDiv.innerHTML = infoHTML;
 
+    currentRestaurant = restaurant;
     currentMenu = restaurant.menu;
 
     // Call a function to insert the restaurants menu
     insertMenuItems(currentMenu);
 }
 
+function addItemToCart(dishName, dishPrice) {
+    var alreadyExists = false;
+
+    // Check if item already exists in cart
+    // If so, increase quantity by 1
+    for(var item of selectedDishes){
+        if(item.name == dishName && item.price == dishPrice){
+            alreadyExists = true;
+            item.quantity++;
+        }
+    }
+
+    // If the item doesnt exist, add it
+    if(!alreadyExists){
+        selectedDishes.push({
+            name: dishName,
+            price: dishPrice,
+            quantity: 1
+        });
+    }
+    
+    console.log(selectedDishes[0].quantity);
+}
 
 function insertMenuItems(restMenu) {
     var menuItemsDiv = document.getElementById("MenuItems");
@@ -1186,8 +1211,7 @@ function insertMenuItems(restMenu) {
     if(displayMeals){
         // Add all meals
         for(dish of restMenu.meals){
-            outputHTML += `<div class=item" >`;
-            outputHTML += //'id = foodID>';
+            outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
             outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
@@ -1196,7 +1220,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="addItemToCart('foodIDD')">Add to Cart +</button>`.replace("foodIDD", dish.fID);
+            outputHTML += `<button type="button" onclick='addItemToCart("temp",${dish.price})'>Add to Cart +</button>`.replace("temp", dish.name);
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
@@ -1215,7 +1239,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `<button type="button" onclick='addItemToCart("temp",${dish.price})'>Add to Cart +</button>`.replace("temp", dish.name);
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
@@ -1233,7 +1257,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `<button type="button" onclick='addItemToCart("temp",${dish.price})'>Add to Cart +</button>`.replace("temp", dish.name);
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
@@ -1251,7 +1275,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `<button type="button" onclick='addItemToCart("temp",${dish.price})'>Add to Cart +</button>`.replace("temp", dish.name);
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
@@ -1270,7 +1294,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `<button type="button" onclick='addItemToCart("temp",${dish.price})'>Add to Cart +</button>`.replace("temp", dish.name);
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
@@ -1289,7 +1313,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `<button type="button" onclick='addItemToCart("temp",${dish.price})'>Add to Cart +</button>`.replace("temp", dish.name);
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
@@ -1349,109 +1373,65 @@ function resetDishDisplay(){
     displaySpecials = true;
 }
 
-function addItemToCart(dishID) {
-    console.log(dishID);
-}
+
 // js for cart page below
 
-function removeItem2(){//to be deleted
-    var deleteItem2 = document.getElementById("item2");
-    deleteItem2.remove();
-  }
-  
-  function removeItem3(){//to be deleted
-    var deleteItem3 = document.getElementById("item3");
-    deleteItem3.remove();
-  }
-  
-  function removeItem4(){//to be deleted
-    var deleteItem4 = document.getElementById("item4");
-    deleteItem4.remove();
-  }
-  
-  function removeItem5(){//to be deleted
-    var deleteItem5 = document.getElementById("item5");
-    deleteItem5.remove();
-  }
-  
-  //for remove itemCard
-  function removeItem(toDelete){
-   var toRemove = document.getElementById(toDelete);
-   toRemove.remove();
-  }
-  
-  var currItemQuantity = 1; //for storing current deleteing item qty
-  document.getElementById("itemQtyjs").innerHTML = currItemQuantity;
-  
-  var bigMacQty = 3;
-  var FriesQty = 3;
-  var aComboQty = 1;
-  var mcNugQty = 1;
-  var fantaQty = 3;
-  
-  document.getElementById("bigMacbr").innerHTML = bigMacQty;
-  document.getElementById("friesbr").innerHTML = FriesQty;
-  document.getElementById("aCombobr").innerHTML = aComboQty;
-  document.getElementById("mcNugbr").innerHTML = mcNugQty;
-  document.getElementById("fantabr").innerHTML = fantaQty;
-  
-  //this is for the popup quantity cusomization to show
-  function openPopUpQty(qtyToShow){
-    document.getElementById("qtyInfo").style.display = "block";
-    currItemQtyEdit(qtyToShow);
-  }
-  
-  //this is for the popup quantity cusomization to close
-  function closePopUpQty() {
-    if(currItemQuantity == 0){
-      removeItem("item1"); //to be corrected
+function fillCart(){
+    var cartItemsDiv = document.getElementById("itemList");
+    var costAmountDiv = document.getElementById("costAmount");
+    var costHTML = "";
+    var itemHTML = "";
+    var totalCost = 0.0;
+
+    for(var cartItem of selectedDishes){
+        if(cartItem.quantity > 0){
+            itemHTML += `<div class="itemCard">`;
+            itemHTML += `<img class="itemPic" src="./Images/FoodItemPlaceholder.png">`;
+            itemHTML += `<div class="iCard">`;
+            itemHTML += `<div class="itemName">`;
+            itemHTML += `<p id="itmNameText">$${(cartItem.price * cartItem.quantity).toFixed(2)}</p>`;
+            itemHTML += `<p id="itmNameText">${cartItem.name}</p>`;
+            itemHTML += `</div>`;
+            itemHTML += `<div class="itemQty">`;
+            itemHTML += `<p id="itmQtyText">Qty: ${cartItem.quantity}`;
+            itemHTML += `</div>`;
+            itemHTML += `</div>`;
+            itemHTML += `<button id="editCart" onclick='plusCartItem("name", ${cartItem.price})'>+</button>`.replace("name", cartItem.name);
+            itemHTML += `<div class="emptyBlock"></div>`;
+            itemHTML += `<button id="deleteCart" onclick='deleteCartItem("name", ${cartItem.price})'>-</button>`.replace("name", cartItem.name);
+            itemHTML += `</div>`;
+
+            totalCost += cartItem.price * cartItem.quantity;
+        }
+        
     }
-     document.getElementById("qtyInfo").style.display = "none";
-  }   
-  
-  window.onclick = function(event) {
-    if (event.target == document.getElementById("qtyInfo")) {
-      document.getElementById("qtyInfo").style.display = "none";
+
+    costHTML += `<p>$${totalCost.toFixed(2)}</p>`;
+    costHTML += `<p>$${(totalCost * 0.05).toFixed(2)}</p>`;
+    costHTML += `<p>$${(totalCost * 0.07).toFixed(2)}</p>`;
+    costHTML += `<p>$${currentRestaurant.deliveryFee.toFixed(2)}</p>`;
+    costHTML += `<p>$${((totalCost + currentRestaurant.deliveryFee) * 1.12).toFixed(2)}</p>`;
+
+    cartItemsDiv.innerHTML = itemHTML;
+    costAmountDiv.innerHTML = costHTML;
+}
+
+function deleteCartItem(dishName, dishPrice){
+    for(var cartItem of selectedDishes){
+        if(cartItem.name == dishName && cartItem.price == dishPrice && cartItem.quantity > 0){
+            cartItem.quantity--;
+        }
     }
-  }
-  
-  //this is for the popup quantity customization for decrease 1 quantity
-  function minusQty() {
-    if(currItemQuantity > 0){
-        currItemQuantity -= 1;
-        bigMacQty = currItemQuantity;  //to be corrected
-        document.getElementById("bigMacbr").innerHTML =  bigMacQty; //to be corrected
-        document.getElementById("itemQtyjs").innerHTML =  currItemQuantity;
+    fillCart();
+}
+
+function plusCartItem(dishName, dishPrice){
+    for(var cartItem of selectedDishes){
+        if(cartItem.name == dishName && cartItem.price == dishPrice && cartItem.quantity > 0){
+            cartItem.quantity++;
+        }
     }
-  
-   }
-  
-   //this is for the popup quantity customization for increase 1 quantity
-  function plusQty(){
-    currItemQuantity +=1;
-    bigMacQty = currItemQuantity; //to be corrected
-    document.getElementById("bigMacbr").innerHTML = bigMacQty; //to be corrected
-      document.getElementById("itemQtyjs").innerHTML =  currItemQuantity;
-    
-  }
-  
-  function currItemQtyEdit(toEdit){ //not able to use
-     currItemQuantity = document.getElementById(toEdit).innerHTML.value;
-     document.getElementById("itemQtyjs").innerHTML = currItemQuantity;
-  }
-  
-  function openPopUpCredit(){
-    document.getElementById("creditInfo").style.display = "block";
-  }
-  
-  function closePopUpCredit() {
-     document.getElementById("creditInfo").style.display = "none";
-  } 
-  
-  window.onclick = function(event) {
-    if (event.target == document.getElementById("creditInfo")) {
-      document.getElementById("creditInfo").style.display = "none";
-    }
-  }
+    fillCart();
+}
 
 //end js for cart page

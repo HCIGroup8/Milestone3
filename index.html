@@ -2,436 +2,341 @@
 <html lang="en">
 
 <head>
-    <title>Food Ordering</title>
-    <link rel="stylesheet" href="Styles.css">
+  <title>Food Ordering</title>
+  <link rel="stylesheet" href="Styles.css">
 </head>
 
 <body>
   <div id="mainHeader">
     <button id="prefBack" class="backBtn" type="button" onclick="prevPage()">
-      <img src="./Images/backarrow.png" width=35px height=35px; >
+      <img src="./Images/backarrow.png" width=35px height=35px;>
     </button>
 
     <button id=cartButton style="float: right;" type="button" onclick="cartClick()">
       <img src="./Images/cart.png" height="30px" width="30px">
     </button>
   </div>
-    <!-- Address Page -->
-    <div id="addrPage">
+  <!-- Address Page -->
+  <div id="addrPage">
 
-        <!-- yunji edit below-->
-        <header>
-            <h1>Food Ordering System</h1>
-        </header>
+    <!-- yunji edit below-->
+    <header>
+      <h1>Food Ordering System</h1>
+    </header>
 
-        <br>
-        <instruction>
-            <p>Please Enter your address below:</p>
-        </instruction>
+    <br>
+    <instruction>
+      <p>Please Enter your address below:</p>
+    </instruction>
 
-        <form class="example" style="margin:auto;max-width:500px">
-            <input type="text" placeholder="Enter your address here" name="enterAddressBar">
-            <!-- <button type="submit">Go</button> -->
-            <button type="button" onclick="categoriesPageClick()">Go</button>
-        </form>
-        <br>
-        <!-- end of yunji edit-->
-
-        <!-- <button type="button" onclick="nextPageClick()">Next Page</button> -->
-    </div>
-
-    <!-- Cuisine Categories Page -->
-    <div id="categoriesPage">
-        <div class="prefHeader">
-            <br>
-            <h1>Cuisines</h1>
-            <!-- <h4>Select the cuisines you would like to browse:</h4> -->
-            <div id="prefSearchDiv">
-                <input type="text" id="prefSearch" onkeyup="refinePreferences()" placeholder="Search Cuisines">
-            </div>
-            <button type="button" id="viewAllRestBtn" onclick="selectAllRest()">View All</button>
-            <button type="button" id="seeRestBtn" onclick="resturantsPageClick()" >See Restaurants &rarr;</button>
-        
-        </div>
-
-        <div id="prefDiv" class="prefContent">
-            <!-- Cuisine options -->
-            <div class="prefCard">
-                <button type="button" id="mexicanBtn" onclick="prefSelect('mexicanCB')">
-                    <label for="mexicanCB">Mexican</label>
-                    <input type="checkbox" id="mexicanCB" name="mexican">
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button" id="pizzaBtn" onclick="prefSelect('pizzaCB')">
-                    <label for="pizzaCB">Pizza</label>
-                    <input type="checkbox" id="pizzaCB" name="pizza">
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button" id="fastfoodBtn" onclick="prefSelect('fastfoodCB')">
-                    <label for="fastfoodCB">Fast Food</label>
-                    <input type="checkbox" id="fastfoodCB" name="fastfood">
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button" id="chickenBtn" onclick="prefSelect('chickenCB')">
-                    <label for="chickenCB">Chicken</label>
-                    <input type="checkbox" id="chickenCB" name="chicken">
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button" >
-                    <label for="italianCB">Italian</label>
-                    <input type="checkbox" id="italianCB" name="italian" disabled>
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button">
-                    <label for="chineseCB">Chinese</label>
-                    <input type="checkbox" id="chineseCB" name="chinese" disabled>
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button">
-                    <label for="thaiCB">Thai</label>
-                    <input type="checkbox" id="thaiCB" name="thai" disabled>
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button">
-                    <label for="greekCB">Greek</label>
-                    <input type="checkbox" id="greekCB" name="greek" disabled>
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button">
-                    <label for="bbqCB">Barbecue</label>
-                    <input type="checkbox" id="bbqCB" name="bbq" disabled>
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button">
-                    <label for="koreanCB">Korean</label>
-                    <input type="checkbox" id="koreanCB" name="korean" disabled>
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button">
-                    <label for="indianCB">Indian</label>
-                    <input type="checkbox" id="indianCB" name="indian" disabled>
-                </button>
-            </div>
-            <div class="prefCard">
-                <button type="button">
-                    <label for="vietnameseCB">Vietnamese</label>
-                    <input type="checkbox" id="vietnameseCB" name="vietnamese" disabled>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Restaurant Page -->
-    <div id="restaurantsPage"> 
-        <!-- <h1>List of Restaurants</h1> -->
-      <div id="restaurantsHeader">
-        <div id="prefChipsDiv">
-            <!-- This div holds the dynamic preference chips -->
-        </div>
-      </div>
-      
-      <div id="restaurantsOptions">
-        <div id="restaurantsDiv" class="vertical-menu">
-            <div id="fastfood" class="fast-food-resturants">
-                <button onclick="menuPageClick('mcdonalds')" id="McDonaldsLink">
-                    <img src="./Images/McDonald's_Logo.png" width=70px height=70px style="margin-right:25px">
-                    <p>McDonald's</p>
-                    
-                </button>
-                <button onclick="menuPageClick('burgerking')" id="BurgerKingLink">
-                    <img src="./Images/BurgerKing_Logo.png" width=70px height=70px style="margin-right:25px">
-                    <p>Burger King</p>
-                </button>
-                <button onclick="menuPageClick('aandw')" id="AandWLink">
-                    <img src="./Images/A&W_Logo.png" width=70px height=70px style="margin-right:25px">
-                    <p>A&W</p>
-                </button>
-                <button onclick="menuPageClick('dairyqueen')" id="DairyQueenLink">
-                    <img src="./Images/DairyQueen_Logo.png" width=70px height=70px style="margin-right:25px">
-                    <p>Dairy Queen</p>
-                </button>
-            </div>
-            <div id="chicken">
-                <button onclick="menuPageClick('kfc')" id="KFCLink">
-                    <img src="./Images/KFC_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
-                    <p>KFC</p>                   
-                </button>
-                <button onclick="menuPageClick('popeyes')" id="PopeyesLink">
-                    <img src="./Images/Popeyes_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
-                    <p>Popeyes</p>   
-                </button>
-                <button onclick="menuPageClick('marybrowns')" id="MaryBrownsLink">
-                    <img src="./Images/MaryBrowns_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
-                    <p>Mary Brown's</p>
-                </button>
-            </div>
-            <div id="pizza">
-                <button onclick="menuPageClick('littlecaesars')" id="LittleCaesarsLink">
-                    <img src="./Images/LittleCaesars_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
-                    <p>Little Caesar's</p>
-                </button>
-                <button onclick="menuPageClick('dominos')" id="DominosLink">
-                    <img src="./Images/Dominos_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
-                    <p>Domino's</p>
-                </button>
-            </div>
-            <div id="mexican">
-                <button onclick="menuPageClick('tacodelmar')" id="TacoDelMarLink">
-                    <img src="./Images/TacoDelMar_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
-                    <p>Taco Del Mar</p>
-                </button>
-                <button onclick="menuPageClick('qdoba')" id="QdobaLink">
-                    <img src="./Images/Qdoba_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
-                    <p>Qdoba</p>
-                </button>
-            </div>
-         </div>    
-      </div>
-   </div> 
+    <form class="example" style="margin:auto;max-width:500px">
+      <input type="text" placeholder="Enter your address here" name="enterAddressBar">
+      <!-- <button type="submit">Go</button> -->
+      <button type="button" onclick="categoriesPageClick()">Go</button>
+    </form>
+    <br>
+  </div>
 
 
-    <!-- Menu Page -->
-    <div id="menuPage">
-      <div id="RestaurantInfo">
-       <!-- This div holds all of the info about the restaurant -->
-      </div>
-      <div id="MenuButtonsContainer">
-        <div id="MenuButtons"> 
-          <button type="button" onclick="refineDishDisplay('all')">
-            All
-          </button>
-          <button type="button" onclick="refineDishDisplay('meals')">
-            Meals
-          </button>
-          <button type="button" onclick="refineDishDisplay('mains')">
-            Mains 
-          </button>
-          <button type="button" onclick="refineDishDisplay('sides')">
-            Sides
-          </button>
-          <button type="button" onclick="refineDishDisplay('beverages')">
-            Beverages
-          </button>
-          <button type="button" onclick="refineDishDisplay('desserts')">
-            Desserts
-          </button>
-          <button type="button" onclick="refineDishDisplay('specials')">
-            Specials
-          </button>
-        </div>
-      </div> 
-      <div id="MenuItems">
-
-
-
-
-        <div class=item> 
-          <div class="itemImg">
-            <img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">
-          </div>
-          <div class=itemText>
-            <p class="foodName">Big Mac</p>
-            <p class="foodPrice">$0.00</p>
-          </div>
-          <div class="itemAdd">
-            <button type="button" onclick="">Add to Cart +</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-     
-    <!-- Cart -->
-    <div id="cartPage">
-       <!-- <h1>Cart</h1> -->
-       <div class="headCart">
-        <h1>Cart</h1>
-      </div>
-    <div class="popUpQtyBack" id="qtyInfo"> 
-      <div class="popUpQty">
   
+
+  <!-- Cuisine Categories Page -->
+  <div id="categoriesPage">
+    <div class="prefHeader">
+      <br>
+      <h1>Cuisines</h1>
+      <!-- <h4>Select the cuisines you would like to browse:</h4> -->
+      <div id="prefSearchDiv">
+        <input type="text" id="prefSearch" onkeyup="refinePreferences()" placeholder="Search Cuisines">
+      </div>
+      <button type="button" id="viewAllRestBtn" onclick="selectAllRest()">View All</button>
+      <button type="button" id="seeRestBtn" onclick="resturantsPageClick()">See Restaurants &rarr;</button>
+    </div>
+
+    <div id="prefDiv" class="prefContent">
+      <!-- Cuisine options -->
+      <div class="prefCard">
+        <button type="button" id="mexicanBtn" onclick="prefSelect('mexicanCB')">
+          <label for="mexicanCB">Mexican</label>
+          <input type="checkbox" id="mexicanCB" name="mexican">
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button" id="pizzaBtn" onclick="prefSelect('pizzaCB')">
+          <label for="pizzaCB">Pizza</label>
+          <input type="checkbox" id="pizzaCB" name="pizza">
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button" id="fastfoodBtn" onclick="prefSelect('fastfoodCB')">
+          <label for="fastfoodCB">Fast Food</label>
+          <input type="checkbox" id="fastfoodCB" name="fastfood">
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button" id="chickenBtn" onclick="prefSelect('chickenCB')">
+          <label for="chickenCB">Chicken</label>
+          <input type="checkbox" id="chickenCB" name="chicken">
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="italianCB">Italian</label>
+          <input type="checkbox" id="italianCB" name="italian" disabled>
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="chineseCB">Chinese</label>
+          <input type="checkbox" id="chineseCB" name="chinese" disabled>
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="thaiCB">Thai</label>
+          <input type="checkbox" id="thaiCB" name="thai" disabled>
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="greekCB">Greek</label>
+          <input type="checkbox" id="greekCB" name="greek" disabled>
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="bbqCB">Barbecue</label>
+          <input type="checkbox" id="bbqCB" name="bbq" disabled>
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="koreanCB">Korean</label>
+          <input type="checkbox" id="koreanCB" name="korean" disabled>
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="indianCB">Indian</label>
+          <input type="checkbox" id="indianCB" name="indian" disabled>
+        </button>
+      </div>
+      <div class="prefCard">
+        <button type="button">
+          <label for="vietnameseCB">Vietnamese</label>
+          <input type="checkbox" id="vietnameseCB" name="vietnamese" disabled>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Restaurant Page -->
+  <div id="restaurantsPage">
+    <!-- <h1>List of Restaurants</h1> -->
+    <div id="restaurantsHeader">
+      <div id="prefChipsDiv">
+        <!-- This div holds the dynamic preference chips -->
+      </div>
+    </div>
+
+    <div id="restaurantsOptions">
+      <div id="restaurantsDiv" class="vertical-menu">
+        <div id="fastfood" class="fast-food-resturants">
+          <button onclick="menuPageClick('mcdonalds')" id="McDonaldsLink">
+            <img src="./Images/McDonald's_Logo.png" width=70px height=70px style="margin-right:25px">
+            <p>McDonald's</p>
+
+          </button>
+          <button onclick="menuPageClick('burgerking')" id="BurgerKingLink">
+            <img src="./Images/BurgerKing_Logo.png" width=70px height=70px style="margin-right:25px">
+            <p>Burger King</p>
+          </button>
+          <button onclick="menuPageClick('aandw')" id="AandWLink">
+            <img src="./Images/A&W_Logo.png" width=70px height=70px style="margin-right:25px">
+            <p>A&W</p>
+          </button>
+          <button onclick="menuPageClick('dairyqueen')" id="DairyQueenLink">
+            <img src="./Images/DairyQueen_Logo.png" width=70px height=70px style="margin-right:25px">
+            <p>Dairy Queen</p>
+          </button>
+        </div>
+        <div id="chicken">
+          <button onclick="menuPageClick('kfc')" id="KFCLink">
+            <img src="./Images/KFC_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
+            <p>KFC</p>
+          </button>
+          <button onclick="menuPageClick('popeyes')" id="PopeyesLink">
+            <img src="./Images/Popeyes_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
+            <p>Popeyes</p>
+          </button>
+          <button onclick="menuPageClick('marybrowns')" id="MaryBrownsLink">
+            <img src="./Images/MaryBrowns_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
+            <p>Mary Brown's</p>
+          </button>
+        </div>
+        <div id="pizza">
+          <button onclick="menuPageClick('littlecaesars')" id="LittleCaesarsLink">
+            <img src="./Images/LittleCaesars_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
+            <p>Little Caesar's</p>
+          </button>
+          <button onclick="menuPageClick('dominos')" id="DominosLink">
+            <img src="./Images/Dominos_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
+            <p>Domino's</p>
+          </button>
+        </div>
+        <div id="mexican">
+          <button onclick="menuPageClick('tacodelmar')" id="TacoDelMarLink">
+            <img src="./Images/TacoDelMar_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
+            <p>Taco Del Mar</p>
+          </button>
+          <button onclick="menuPageClick('qdoba')" id="QdobaLink">
+            <img src="./Images/Qdoba_Logo.png" width="70px" height="70px" style="margin-right: 25px;">
+            <p>Qdoba</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Menu Page -->
+  <div id="menuPage">
+    <div id="RestaurantInfo">
+      <!-- This div holds all of the info about the restaurant -->
+    </div>
+    <div id="MenuButtonsContainer">
+      <div id="MenuButtons">
+        <button type="button" onclick="refineDishDisplay('all')">
+          All
+        </button>
+        <button type="button" onclick="refineDishDisplay('meals')">
+          Meals
+        </button>
+        <button type="button" onclick="refineDishDisplay('mains')">
+          Mains
+        </button>
+        <button type="button" onclick="refineDishDisplay('sides')">
+          Sides
+        </button>
+        <button type="button" onclick="refineDishDisplay('beverages')">
+          Beverages
+        </button>
+        <button type="button" onclick="refineDishDisplay('desserts')">
+          Desserts
+        </button>
+        <button type="button" onclick="refineDishDisplay('specials')">
+          Specials
+        </button>
+      </div>
+    </div>
+    <div id="MenuItems">
+
+
+
+
+      <div class=item>
+        <div class="itemImg">
+          <img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">
+        </div>
+        <div class=itemText>
+          <p class="foodName">Big Mac</p>
+          <p class="foodPrice">$0.00</p>
+        </div>
+        <div class="itemAdd">
+          <button type="button" onclick="">Add to Cart +</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Cart -->
+  <div id="cartPage">
+    <!-- <h1>Cart</h1> -->
+    <div class="headCart">
+      <h1>Cart</h1>
+    </div>
+    <div class="popUpQtyBack" id="qtyInfo">
+      <div class="popUpQty">
+
         <p style="font-size: 38px; text-align: center;">Current Qty:<a id="itemQtyjs"></a></p>
         <div class="qtyChg">
-             <button id="decQty" type="button" onclick="minusQty()" style="font-size:20px">-</button>
-             <button id="inQty" type="button" onclick="plusQty()" style="font-size:20px">+</button>
+          <button id="decQty" type="button" onclick="minusQty()" style="font-size:20px">-</button>
+          <button id="inQty" type="button" onclick="plusQty()" style="font-size:20px">+</button>
         </div>
-        <button id="doneQty" type="button" onclick="closePopUpQty()")>Ok</button>
+        <button id="doneQty" type="button" onclick="closePopUpQty()" )>Ok</button>
       </div>
     </div>
-  
-      <div class="cartPage"> 
-       <div class="itemList">
-          <div id="item1" class="itemCard">
-            <img class="itemPic" src="./Images/bigmac.jpeg" >
-  
-            <div class="iCard">
-              <div class="itemName">
-                <p id="itmNameText"> $10.39</p>
-                <p id="itmNameText"> Big Mac</p>
-              </div>
-  
-              <div class="itemQty">
-               <p id="itmQtyText">Qty:<a id=bigMacbr></a></p>
-              </div>
-            </div>
-            <button id="editCart" onclick="">Edit</button>
-            <div class="emptyBlock"></div>        
-            <button id="deleteCart" onclick="openPopUpQty(bigMacbr)">Delete</button>
-            
-          </div>
-  
-          <div id="item2" class="itemCard">
-            <img class="itemPic" src="./Images/fries.jpeg">
-  
-            <div class="iCard">
-              <div class="itemName">
-                <p id="itmNameText"> &nbsp$4.49</p>
-                <p id="itmNameText"> &nbspMed Fries</p>
-              </div>
-  
-              <div class="itemQty">
-                <p  id="itmQtyText">Qty:<a id=friesbr></a></p>
-              </div>
-            </div>        
-            <button id="editCart" onclick="">Edit</button>
-            <div class="emptyBlock"></div>
-            <button id="deleteCart" onclick="removeItem2()">Delete</button> 
-  
-          </div>
-  
-          <div id="item3" class="itemCard">
-          <img class="itemPic" src="./Images/'A'combo.jpeg">
-            
-            <div class="iCard">
-              <div class="itemName">
-                <p id="itmNameText"> &nbsp$1.29</p>
-                <p id="itmNameText"> &nbspMc'A'combo</p>
-              </div> 
-  
-              <div class="itemQty">
-                <p  id="itmQtyText">Qty:<a id=aCombobr></a></p>
-              </div>
-            </div>     
-            <button id="editCart" onclick="">Edit</button>
-            <div class="emptyBlock"></div>
-            <button id="deleteCart" onclick="removeItem3()">Delete</button>
-  
-          </div>
-  
-          <div id="item4" class="itemCard">
-          <img class="itemPic" src="./Images/macNuggets.jpeg">
-  
-            <div class="iCard">
-              <div class="itemName">
-                <p id="itmNameText"> &nbsp$4.32</p>
-                <p id="itmNameText"> &nbspMcNuggets</p>
-              </div> 
-  
-              <div class="itemQty">
-                <p  id="itmQtyText">Qty:<a id=mcNugbr></a></p>
-              </div>
-            </div>
-            <button id="editCart" onclick="">Edit</button>
-            <div class="emptyBlock"></div>
-            <button id="deleteCart" onclick="removeItem4()">Delete</button>
-  
-          </div>
-  
-          <div id="item5" class="itemCard">
-          <img class="itemPic" src="./Images/softDrink.jpeg" >
-  
-            <div class="iCard">
-              <div class="itemName">
-                <p id="itmNameText"> &nbsp$3.58</p>
-                <p id="itmNameText"> &nbspLrg Fanta</p>
-              </div>    
-  
-              <div class="itemQty">
-                <p  id="itmQtyText">Qty:<a id=fantabr></p>
-              </div>  
-            </div>
-            <button id="editCart" onclick="">Edit</button>
-            <div class="emptyBlock"></div>
-            <button id="deleteCart" onclick="removeItem5()">Delete</button>
-  
-  
-          </div>
-        </div>
-      <div class="paymentBoxBack"  id="creditInfo">
-        <div  class="paymentBox">
-  
-            <h1 style="text-align: center; margin-top: 8%;">Credit Card Information</h1>
-    
-            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspName&nbsp&nbsp&nbsp&nbsp&nbsp :<input type="text" placeholder="Enter your Name here" name="enterNameBar"></input></p>
-    
-            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbspCredit Card No:<input type="number" placeholder="Enter Credit Card No. here" name="enterCreditCardNoBar"></input></p>
-    
-            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbspExpire Year&nbsp&nbsp :<input type="number" placeholder="Enter Expire Year here" name="enterExpireYrBar"></p>
-    
-            <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCCV &nbsp&nbsp&nbsp&nbsp&nbsp:<input type="number" placeholder="Enter Ccv here" name="enterCcvBar"></p>
-    
-            <button id="creditInfobutton" type="button" onclick="closePopUpCredit()">Confirm</button>
-         
+    <div class="cartPage">
+      <div id="itemList" class="itemList">
+        <!-- Cart Items go here -->
+      </div>
+      <div class="paymentBoxBack" id="creditInfo">
+        <div class="paymentBox">
+
+          <h1 style="text-align: center; margin-top: 8%;">Credit Card Information</h1>
+
+          <p style="font-size: 20px; margin-top: 8%;">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspName&nbsp&nbsp&nbsp&nbsp&nbsp :<input type="text"
+              placeholder="Enter your Name here" name="enterNameBar"></input></p>
+
+          <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbspCredit Card No:<input type="number"
+              placeholder="Enter Credit Card No. here" name="enterCreditCardNoBar"></input></p>
+
+          <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbspExpire Year&nbsp&nbsp :<input type="number"
+              placeholder="Enter Expire Year here" name="enterExpireYrBar"></p>
+
+          <p style="font-size: 20px; margin-top: 8%;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCCV
+            &nbsp&nbsp&nbsp&nbsp&nbsp:<input type="number" placeholder="Enter Ccv here" name="enterCcvBar"></p>
+
+          <button id="creditInfobutton" type="button" onclick="closePopUpCredit()">Confirm</button>
+
         </div>
       </div>
-        <div class="paymentList">
-  
-           <h1 style="text-align: center;">Payment Method</h1>
-            
-              <form action="/action_page.php">
-                <p style="text-align: center;">Please select one below:</p>
-                <input type="radio" id="payOnDelivery" name="PaymentMethod" value="Pay On Delivery">
-                <label for="payOnDelivery" class="payOptionText"> Pay On Delivery</label>            
-                <br><br>
-                <input type="radio" id="creditCard" onclick="openPopUpCredit()" name="PaymentMethod" value="Credit Card">
-                <label for="creditCard" class="payOptionText">Credit Card</label>
-                <br><br>
-                <input type="radio" id="googlePay" name="PaymentMethod" value="Google Pay">
-                <label for="googlePay" class="payOptionText">Google Pay</label>
-                <br><br>
-                <input type="radio" id="other" name="PaymentMethod" value="other">
-                <label for="other" class="payOptionText">Other</label>
-              </form>
-            
-            <div class="bottomLine"></div>
-  
-  
-            <h2 style="text-align: center;">Total</h2>
-            <div class="tolCost"> 
-             <div class="costInfo">           
-                  <p >food&nbsp:&nbsp</p>
-                  <p >GST&nbsp:&nbsp</p>
-                  <p >PST&nbsp:&nbsp</p>
-                  <p >Delivery:&nbsp</p>
-                  <p >Total payment:&nbsp</p> 
-            </div>
-  
-            <div class="costAmount">           
-              <p >$24.07</p>
-              <p >$2.89</p>
-              <p >$3.6</p>
-              <p >$3</p>
-              <p >$33.56</p>      
-            </div>   
+      <div class="paymentList">
+
+        <h1 style="text-align: center;">Payment Method</h1>
+
+        <form action="/action_page.php">
+          <p style="text-align: center;">Please select one below:</p>
+          <input type="radio" id="payOnDelivery" name="PaymentMethod" value="Pay On Delivery">
+          <label for="payOnDelivery" class="payOptionText"> Pay On Delivery</label>
+          <br><br>
+          <input type="radio" id="creditCard" onclick="openPopUpCredit()" name="PaymentMethod" value="Credit Card">
+          <label for="creditCard" class="payOptionText">Credit Card</label>
+          <br><br>
+          <input type="radio" id="googlePay" name="PaymentMethod" value="Google Pay">
+          <label for="googlePay" class="payOptionText">Google Pay</label>
+          <br><br>
+          <input type="radio" id="other" name="PaymentMethod" value="other">
+          <label for="other" class="payOptionText">Other</label>
+        </form>
+
+        <div class="bottomLine"></div>
+
+
+        <h2 style="text-align: center;">Total</h2>
+        <div class="tolCost">
+          <div class="costInfo">
+            <p>Food&nbsp:&nbsp</p>
+            <p>GST&nbsp:&nbsp</p>
+            <p>PST&nbsp:&nbsp</p>
+            <p>Delivery:&nbsp</p>
+            <p>Total payment:&nbsp</p>
           </div>
-            <button type="button" id="checkOut" >Place Your Order</button>   
-           
-        </div> 
+
+          <div id="costAmount" class="costAmount">
+            <!--  -->
+          </div>
+        </div>
+        <button type="button" id="checkOut">Place Your Order</button>
+
       </div>
+    </div>
 
     <!-- Edit Item -->
     <div id="editItemPage">
-        <h1>Edit item</h1>
+      <h1>Edit item</h1>
     </div>
 
 </body>
