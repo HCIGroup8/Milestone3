@@ -9,7 +9,7 @@ var rests = document.getElementById("restaurantsPage");
 var menu = document.getElementById("menuPage");
 var cart = document.getElementById("cartPage");
 var head = document.getElementById("mainHeader");
-
+var cartButton = document.getElementById("cartButton");
 var currentPage; 
 
 // Array holding names of selected cuisine preferences
@@ -869,6 +869,7 @@ var qdobaObj = {
 function categoriesPageClick() {
     addr.style.display = "none";
     prefs.style.display = "inline";
+    head.style.display = "block";
     currentPage = prefs;
 }
 
@@ -888,6 +889,7 @@ function resturantsPageClick() {
 function menuPageClick(name) {
     rests.style.display = "none";
     menu.style.display = "inline";
+    cartButton.style.display = "block";
     insertRestaurantInfo(name);
     currentPage = menu;
 }
@@ -895,17 +897,20 @@ function menuPageClick(name) {
 function cartClick() {
     menu.style.display = "none";
     cart.style.display = "inline";
-    currentPage = menu;
+    currentPage = cart;
 }
 
 function prevPage() {
+    console.log(currentPage);
     switch(currentPage) {
+        
         case addr:    
             break;
 
         case prefs:
             prefs.style.display = "none";
             addr.style.display = "inline";
+            head.style.display = "none";
             currentPage = addr;
             break;
 
@@ -918,12 +923,14 @@ function prevPage() {
         case menu:
             menu.style.display = "none";
             rests.style.display = "inline";
+            cartButton.style.display = "none";
             currentPage = rests;
             break;
     
         case cart:
             cart.style.display = "none";
-            menu.style.display = "inline"
+            menu.style.display = "inline";
+            cartButton.style.display = "block";
             currentPage = menu;
             break;
         default:
@@ -1179,8 +1186,8 @@ function insertMenuItems(restMenu) {
     if(displayMeals){
         // Add all meals
         for(dish of restMenu.meals){
-            outputHTML += `<div class=item" `;
-            outputHTML += 'id = foodID>'.replace("foodID", dish.fID);
+            outputHTML += `<div class=item" >`;
+            outputHTML += //'id = foodID>';
             outputHTML += `<div class="itemImg">`;
             outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;

@@ -17,8 +17,9 @@ header {
   }
 
 #mainHeader {
-  display: block;
-  position: fixed;
+  display: none;
+  position: sticky;
+
   width: 100%;
   height: 5%;
   background-color: #f99201;
@@ -31,6 +32,14 @@ header {
   background-color: #f99201;
   border-style: none;
   float: left;
+}
+
+
+#cartButton {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 instruction{
@@ -217,7 +226,7 @@ instruction{
   display: inline-flex;
   width: 100%;
   position: sticky;
-  top: 0;  
+  top: 44px;  
   border-color: #F6F7EB;
   border-width: 2px;
   background-color: #E94F37;
@@ -286,6 +295,8 @@ instruction{
 
 
 /*BEGIN MENU CSS*/
+
+
 #menuHeader {
   background-color: #293132;
   height: 5%;
