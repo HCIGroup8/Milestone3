@@ -7,7 +7,11 @@
 </head>
 
 <body>
-
+  <div id="mainHeader">
+    <button id="prefBack" class="backBtn" type="button" onclick="prevPage()">
+      <img src="./Images/backarrow.png" width=35px height=35px; >
+    </button>
+  </div>
     <!-- Address Page -->
     <div id="addrPage">
 
@@ -35,7 +39,6 @@
     <!-- Cuisine Categories Page -->
     <div id="categoriesPage">
         <div class="prefHeader">
-            <button id="prefBack" class="backBtn" type="button" onclick="categoriesPageBack()">&larr;</button>
             <br>
             <h1>Cuisines</h1>
             <!-- <h4>Select the cuisines you would like to browse:</h4> -->
@@ -128,8 +131,6 @@
     <div id="restaurantsPage"> 
         <!-- <h1>List of Restaurants</h1> -->
       <div id="restaurantsHeader">
-        <button type="button" class="backBtn" onclick="restaurantsPageBack()">&larr;</button>
-
         <div id="prefChipsDiv">
             <!-- This div holds the dynamic preference chips -->
         </div>
@@ -198,7 +199,6 @@
     <!-- Menu Page -->
     <div id="menuPage">
       <div id="menuHeader">
-        <button type="button" class="backBtn" onclick="menuBack()">&larr;</button>
         <button style="float: right;" type="button" onclick="cartClick()">
           <img src="./Images/cart.png" height="30px" width="30px">
         </button>
@@ -248,24 +248,14 @@
             <button type="button" onclick="">Add to Cart +</button>
           </div>
         </div>
-        
-          
-
-
-
-
-
-
       </div>
     </div>
 
      
-
     <!-- Cart -->
     <div id="cartPage">
        <!-- <h1>Cart</h1> -->
        <div class="headCart">
-        <button id="cartBack" type="button" onclick="">&larr;</button>
         <h1>Cart</h1>
       </div>
     <div class="popUpQtyBack" id="qtyInfo"> 
