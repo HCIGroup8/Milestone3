@@ -55,8 +55,8 @@ header {
 }
 
 #backBtn:hover {
-  background-color: #d0320b;
-  color: rgb(255, 255, 255);
+  filter: invert(1);
+  border: solid 1px white;
 }
 
 
@@ -70,6 +70,12 @@ header {
   border: solid 1px white;
   background-color: white;
   filter: invert(1);
+}
+
+#cartButton:hover {
+  filter: none;
+  border: solid 1px black;
+
 }
 
 instruction{
@@ -187,6 +193,10 @@ instruction{
   width: 5%;
   font-size: larger;
   top: 110px;
+}
+
+#seeRestBtn:hover {
+  background-color: #f99201;
 }
 
 #viewAllRestBtn {
@@ -394,7 +404,7 @@ instruction{
 #RestaurantSaying {
   position: fixed;
   top: 80px;
-  left: 820px;
+  left: 45%;
   height: 100px;
   font-size: x-large;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
