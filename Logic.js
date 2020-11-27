@@ -1181,7 +1181,7 @@ function insertRestaurantInfo(restName) {
     // Call a function to insert the restaurants menu
     resetDishDisplay();
     window.scrollTo(0,0);
-    
+
     insertMenuItems(currentMenu);
 }
 
@@ -1329,6 +1329,7 @@ function insertMenuItems(restMenu) {
 }
 
 function refineDishDisplay(menuCatagory) {
+    window.scrollTo(0,0);
     falsifyDishDisplay();
     switch(menuCatagory) {
         case "meals": 
