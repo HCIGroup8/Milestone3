@@ -46,7 +46,7 @@ var mcdonaldsObj = {
             {
                 name: "Big Mac Combo",
                 price: 7.75,
-                fID: "mac"
+                fID: "01"
             },
             {
                 name: "Quarter Pounder Combo",
@@ -128,61 +128,73 @@ var burgerKingObj = {
         meals: [
             {
                 name: "Whopper Meal",
-                price: 7.75
+                price: 7.75,
+                fID: "13"
             },
             {
                 name: "Bacon Whopper Meal",
-                price: 6.50
+                price: 6.50,
+                fID: "14"
             }
         ],
         mains: [
             {
                 name: "Whopper",
-                price: 5.00
+                price: 5.00,
+                fID: "15"
             },
             {
                 name: "Quarter Pounder",
-                price: 4.50
+                price: 4.50,
+                fID: "16"
             },
             {
                 name: "Whopper Jr",
-                price: 2.50
+                price: 2.50,
+                fID: "17"
             }
         ],
         sides: [
             {
                 name: "Fries",
-                price: 2.00
+                price: 2.00,
+                fID: "18"
             }
         ],
         beverages: [
             {
                 name: "Pepsi",
-                price: 1.00
+                price: 1.00,
+                fID: "19"
             },
             {
                 name: "Coke",
-                price: 1.00
+                price: 1.00,
+                fID: "20"
             }
         ],
         desserts: [
             {
                 name: "Apple Pie",
-                price: 3.50
+                price: 3.50,
+                fID: "21"
             },
             {
                 name: "Vanilla Cone",
-                price: 4.00
+                price: 4.00,
+                fID: "22"
             }
         ],
         specials: [
             {
                 name: "BBQ Bacon Whopper",
-                price: 2.50
+                price: 2.50,
+                fID: "23"
             },
             {
                 name: "Cheeseburger",
-                price: 2.50
+                price: 2.50,
+                fID: "24"
             }
         ]
     }
@@ -199,65 +211,78 @@ var awObj = {
         meals: [
             {
                 name: "Papa Burger Meal",
-                price: 7.75
+                price: 7.75,
+                fID: "25"
             },
             {
                 name: "Teen Burger Meal",
-                price: 6.50
+                price: 6.50,
+                fID: "26"
             }
         ],
         mains: [
             {
                 name: "Papa Burger",
-                price: 5.00
+                price: 5.00,
+                fID: "27"
             },
             {
                 name: "Mama Burger",
-                price: 4.50
+                price: 4.50,
+                fID: "28"
             },
             {
                 name: "Teen Burger",
-                price: 2.50
+                price: 2.50,
+                fID: "29"
             }
         ],
         sides: [
             {
                 name: "Fries",
-                price: 2.00
+                price: 2.00,
+                fID: "30"
             },
             {
                 name: "Onion Rings",
-                price: 3.50
+                price: 3.50,
+                fID: "31"
             }
         ],
         beverages: [
             {
                 name: "Root Beer",
-                price: 1.00
+                price: 1.00,
+                fID: "32"
             },
             {
                 name: "Coke",
-                price: 1.00
+                price: 1.00,
+                fID: "33"
             }
         ],
         desserts: [
             {
                 name: "Apple Pie",
-                price: 3.50
+                price: 3.50,
+                fID: "34"
             },
             {
                 name: "Root Beer Float",
-                price: 4.00
+                price: 4.00,
+                fID: "35"
             }
         ],
         specials: [
             {
                 name: "Baby Burger",
-                price: 2.50
+                price: 2.50,
+                fID: "36"
             },
             {
                 name: "Junior Burger",
-                price: 2.50
+                price: 2.50,
+                fID: "37"
             }
         ]
     }
@@ -274,61 +299,73 @@ var dairyQueenObj = {
         meals: [
             {
                 name: "Chicken Strip Combo",
-                price: 7.75
+                price: 7.75,
+                fID: "38"
             },
             {
                 name: "Poutine Meal",
-                price: 6.50
+                price: 6.50,
+                fID: "39"
             }
         ],
         mains: [
             {
                 name: "Poutine",
-                price: 5.00
+                price: 5.00,
+                fID: "40"
             },
             {
                 name: "Chicken Strips",
-                price: 4.50
+                price: 4.50,
+                fID: "41"
             },
             {
                 name: "Cheeseburger",
-                price: 2.50
+                price: 2.50,
+                fID: "42"
             }
         ],
         sides: [
             {
                 name: "Fries",
-                price: 2.00
+                price: 2.00,
+                fID: "43"
             }
         ],
         beverages: [
             {
                 name: "Pepsi",
-                price: 1.00
+                price: 1.00,
+                fID: "44"
             },
             {
                 name: "Milkshake",
-                price: 1.00
+                price: 1.00,
+                fID: "45"
             }
         ],
         desserts: [
             {
                 name: "Blizzard",
-                price: 3.50
+                price: 3.50,
+                fID: "46"
             },
             {
                 name: "Dilly Bar",
-                price: 4.00
+                price: 4.00,
+                fID: "47"
             }
         ],
         specials: [
             {
                 name: "Fudge Brownie Blizzard",
-                price: 2.50
+                price: 2.50,
+                fID: "48"
             },
             {
                 name: "3pc Chicken Strips",
-                price: 2.50
+                price: 2.50,
+                fID: "49"
             }
         ]
     }
@@ -345,61 +382,73 @@ var kfcObj = {
         meals: [
             {
                 name: "12pc Chicken Meal",
-                price: 7.75
+                price: 7.75,
+                fID: "50"
             },
             {
                 name: "8pc Chicken Meal",
-                price: 6.50
+                price: 6.50,
+                fID: "51"
             }
         ],
         mains: [
             {
                 name: "Popcorn Chicken",
-                price: 5.00
+                price: 5.00,
+                fID: "52"
             },
             {
                 name: "Chicken Tenders",
-                price: 4.50
+                price: 4.50,
+                fID: "53"
             },
             {
                 name: "Chicken Wings",
-                price: 2.50
+                price: 2.50,
+                fID: "54"
             }
         ],
         sides: [
             {
                 name: "Mashed Potatoes",
-                price: 2.00
+                price: 2.00,
+                fID: "55"
             }
         ],
         beverages: [
             {
                 name: "Pepsi",
-                price: 1.00
+                price: 1.00,
+                fID: "56"
             },
             {
                 name: "Coke",
-                price: 1.00
+                price: 1.00,
+                fID: "56"
             }
         ],
         desserts: [
             {
                 name: "Chocolate Chip Cake",
-                price: 3.50
+                price: 3.50,
+                fID: "57"
             },
             {
                 name: "Cookies",
-                price: 4.00
+                price: 4.00,
+                fID: "58"
             }
         ],
         specials: [
             {
                 name: "Party Bucket",
-                price: 2.50
+                price: 2.50,
+                fID: "59"
             },
             {
                 name: "Hot Wings",
-                price: 2.50
+                price: 2.50,
+                fID: "60"
             }
         ]
     }
@@ -416,53 +465,63 @@ var popeyesObj = {
         meals: [
             {
                 name: "Chicken Sandwich Combo",
-                price: 7.75
+                price: 7.75,
+                fID: "61"
             },
             {
                 name: "Signature Chicken Combo",
-                price: 6.50
+                price: 6.50,
+                fID: "62"
             }
         ],
         mains: [
             {
                 name: "Chicken Sandwich",
-                price: 5.00
+                price: 5.00,
+                fID: "63"
             },
             {
                 name: "6pc Chicken Tenders",
-                price: 4.50
+                price: 4.50,
+                fID: "64"
             },
             {
                 name: "4pc McChicken",
-                price: 2.50
+                price: 2.50,
+                fID: "65"
             }
         ],
         sides: [
             {
                 name: "Fries",
-                price: 2.00
+                price: 2.00,
+                fID: "66"
             }
         ],
         beverages: [
             {
                 name: "Pepsi",
-                price: 1.00
+                price: 1.00,
+                fID: "67"
             },
             {
                 name: "Coke",
-                price: 1.00
+                price: 1.00,
+                fID: "68"
             }
         ],
         desserts: [
             {
                 name: "Apple Pie",
-                price: 3.50
+                price: 3.50,
+                fID: "69"
             }
         ],
         specials: [
             {
                 name: "Junior Chicken Sandwich",
-                price: 2.50
+                price: 2.50,
+                fID: "70"
             }
         ]
     }

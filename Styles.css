@@ -362,7 +362,8 @@ instruction{
   margin-bottom: 10px;
   /* height: 15%; */
 }
-.item {
+
+#MenuItems {
   background-color: #FFEEDB;
   display: block;
   border-color: #000000;
