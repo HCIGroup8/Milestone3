@@ -11,6 +11,7 @@ var cart = document.getElementById("cartPage");
 var head = document.getElementById("mainHeader");
 var cartButton = document.getElementById("cartButton");
 var currentPage; 
+var count = 0;
 
 // Array holding names of selected cuisine preferences
 var selectedPrefs = [];
@@ -121,7 +122,7 @@ var burgerKingObj = {
     name: "Burger King",
     img: "./Images/BurgerKing_logo.png",
     description: "Eat like a king",
-    deliveryFee: (Math.random() * MAX_FEE).toFixed(2),
+    deliveryFee: 3.00,
     deliveryTime: "5-10",
     distance: 3.00,
     menu: {
@@ -897,6 +898,7 @@ function menuPageClick(name) {
 function cartClick() {
     menu.style.display = "none";
     cart.style.display = "inline";
+    cartButton.style.display = "none";
     currentPage = cart;
     fillCart();
 }
@@ -1162,8 +1164,10 @@ function insertRestaurantInfo(restName) {
     // Build up the string of html to insert
     infoHTML += `<img src="${restaurant.img}" width=70px height=70px style="margin-right:25px">`;
     infoHTML += `<p id="RestaurantName">${restaurant.name}</p>`;
-    infoHTML += `<p style="padding-left: 300px;">${restaurant.description}</p>`;
-    infoHTML += `<div class="restaurantDescription">`;
+    infoHTML += `<div id="RestaurantSaying" >`;
+    infoHTML += `<p>${restaurant.description}</p>`;
+    infoHTML += `</div>`;
+    infoHTML += `<div id="restaurantDescription" style = "height: 150px">`;
     infoHTML += `<p>Distance: ${restaurant.distance}km away</p>`;
     infoHTML += `<p>Est. Delivery Time: 20-25 min</p>`;
     infoHTML += `<p>Delivery Fee: $${restaurant.deliveryFee}</p>`;
@@ -1213,7 +1217,7 @@ function insertMenuItems(restMenu) {
         for(dish of restMenu.meals){
             outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
-            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `<img src="./Images/'A'combo.jpeg" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
             outputHTML += '<div class=itemText>';
             outputHTML += `<p class="foodName">${dish.name}</p>`;
@@ -1232,7 +1236,7 @@ function insertMenuItems(restMenu) {
         for(dish of restMenu.mains){
             outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
-            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `<img src="./Images/'A'combo.jpeg" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
             outputHTML += '<div class=itemText>';
             outputHTML += `<p class="foodName">${dish.name}</p>`;
@@ -1250,7 +1254,7 @@ function insertMenuItems(restMenu) {
         for(dish of restMenu.sides){
             outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
-            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `<img src="./Images/'A'combo.jpeg" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
             outputHTML += '<div class=itemText>';
             outputHTML += `<p class="foodName">${dish.name}</p>`;
@@ -1268,7 +1272,7 @@ function insertMenuItems(restMenu) {
         for(dish of restMenu.beverages){
             outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
-            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `<img src="./Images/softDrink.jpeg" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
             outputHTML += '<div class=itemText>';
             outputHTML += `<p class="foodName">${dish.name}</p>`;
@@ -1287,7 +1291,7 @@ function insertMenuItems(restMenu) {
         for(dish of restMenu.desserts){
             outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
-            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `<img src="./Images/softDrink.jpeg" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
             outputHTML += '<div class=itemText>';
             outputHTML += `<p class="foodName">${dish.name}</p>`;
@@ -1306,7 +1310,7 @@ function insertMenuItems(restMenu) {
         for(dish of restMenu.specials){
             outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
-            outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `<img src="./Images/meal.jpg" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
             outputHTML += '<div class=itemText>';
             outputHTML += `<p class="foodName">${dish.name}</p>`;
@@ -1387,15 +1391,8 @@ function fillCart(){
         if(cartItem.quantity > 0){
             itemHTML += `<div class="itemCard">`;
             itemHTML += `<img class="itemPic" src="./Images/FoodItemPlaceholder.png">`;
-            itemHTML += `<div class="iCard">`;
-            itemHTML += `<div class="itemName">`;
-            itemHTML += `<p id="itmNameText">$${(cartItem.price * cartItem.quantity).toFixed(2)}</p>`;
-            itemHTML += `<p id="itmNameText">${cartItem.name}</p>`;
-            itemHTML += `</div>`;
-            itemHTML += `<div class="itemQty">`;
-            itemHTML += `<p id="itmQtyText">Qty: ${cartItem.quantity}`;
-            itemHTML += `</div>`;
-            itemHTML += `</div>`;
+            itemHTML += `<p style="margin-left:5%">${cartItem.name}</p>`;    
+            itemHTML += `<p style="margin-left:5%">$${(cartItem.price * cartItem.quantity).toFixed(2)} <a style="float:right; margin-right:5% ">Qty: ${cartItem.quantity}</a></p>`;
             itemHTML += `<button id="editCart" onclick='plusCartItem("name", ${cartItem.price})'>+</button>`.replace("name", cartItem.name);
             itemHTML += `<div class="emptyBlock"></div>`;
             itemHTML += `<button id="deleteCart" onclick='deleteCartItem("name", ${cartItem.price})'>-</button>`.replace("name", cartItem.name);
@@ -1435,3 +1432,14 @@ function plusCartItem(dishName, dishPrice){
 }
 
 //end js for cart page
+
+function changeColour(id) {
+    count++;
+    var stuff = document.getElementById(id);
+    if (count == 1) {
+        stuff.style.backgroundColor = "green";
+    } else if (count == 3) {
+        stuff.style.backgroundColor = "red";
+        count = 0;
+    }
+}   
