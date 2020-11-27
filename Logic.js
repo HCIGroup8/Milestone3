@@ -1179,6 +1179,8 @@ function insertRestaurantInfo(restName) {
     currentMenu = restaurant.menu;
 
     // Call a function to insert the restaurants menu
+    resetDishDisplay();
+
     insertMenuItems(currentMenu);
 }
 
