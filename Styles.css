@@ -31,6 +31,19 @@ header {
   border: solid 2px black
 }
 
+.title {
+  position: fixed;
+  display: inline-block;
+  color: white;
+  top: 0;
+  margin-top: 9px;
+  left: 45%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: x-large;
+   
+  z-index: 3;
+}
+
 #backBtn {
   color: white;
   background-color: black;
@@ -245,6 +258,19 @@ instruction{
   background-color: #f99201;
   margin: 10px;
   border: solid 2px black;
+}
+
+.ChipInfo {
+  position: fixed;
+  display: block;
+  color: black;
+  top: 55px;
+  margin-top: 9px;
+  left: 1%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: x-large;
+  z-index: 3;
+
 }
 
 #prefChipsDiv {
