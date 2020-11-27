@@ -188,7 +188,7 @@ instruction{
   border-color: black;
   border-style: solid;
   border-width: 2px;
-  margin-left: 190px;
+  margin-left: 135px;
   height: 58px;
   width: 5%;
   font-size: larger;
@@ -666,7 +666,7 @@ instruction{
     color: black;
     font-size: 40px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    width: 99%;
+    width: 99.1%;
     height: 60px;
     border: solid 2px black;
 }
@@ -763,3 +763,5 @@ instruction{
 
 
 /* END CART CSS*/
+
+
