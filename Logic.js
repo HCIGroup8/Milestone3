@@ -611,15 +611,15 @@ var littlecaesarsObj = {
         ],
         mains: [
             {
-                name: "Great Canadian",
+                name: "Great Canadian Pizza",
                 price: 5.00
             },
             {
-                name: "Meatlovers",
+                name: "Meatlovers Pizza",
                 price: 4.50
             },
             {
-                name: "Cheese",
+                name: "Cheese Pizza",
                 price: 2.50
             }
         ],
@@ -904,7 +904,6 @@ function cartClick() {
 }
 
 function prevPage() {
-    console.log(currentPage);
     switch(currentPage) {
         
         case addr:    
@@ -1203,8 +1202,6 @@ function addItemToCart(dishName, dishPrice) {
             quantity: 1
         });
     }
-    
-    console.log(selectedDishes[0].quantity);
 }
 
 function insertMenuItems(restMenu) {
@@ -1310,7 +1307,7 @@ function insertMenuItems(restMenu) {
         for(dish of restMenu.specials){
             outputHTML += `<div class=item>`;
             outputHTML += `<div class="itemImg">`;
-            outputHTML += `<img src="./Images/meal.jpg" width="70px" height="70px" style="margin-right: 25px;">`;
+            outputHTML += `<img src="./Images/'A'combo.jpeg" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
             outputHTML += '<div class=itemText>';
             outputHTML += `<p class="foodName">${dish.name}</p>`;

@@ -248,6 +248,10 @@ instruction{
   border: solid 2px black;
 }
 
+#prefChipsDiv {
+  margin-top: 45px;
+}
+
 .closeBtn {
   padding-left: 10px;
   color: red;
