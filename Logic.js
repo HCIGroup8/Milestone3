@@ -838,7 +838,7 @@ function menuPageClick(name) {
 function cartClick() {
     menu.style.display = "none";
     cart.style.display = "inline";
-    currentPage = menu;
+    currentPage = cart;
 }
 
 function prevPage() {
@@ -1127,8 +1127,8 @@ function insertMenuItems(restMenu) {
     if(displayMeals){
         // Add all meals
         for(dish of restMenu.meals){
-            outputHTML += `<div class=item" `;
-            outputHTML += 'id = foodID>'.replace("foodID", dish.fID);
+            outputHTML += `<div class=item" >`;
+            outputHTML += //'id = foodID>';
             outputHTML += `<div class="itemImg">`;
             outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
