@@ -15,6 +15,9 @@ var currentPage;
 // Array holding names of selected cuisine preferences
 var selectedPrefs = [];
 
+// Array holding selected dish from restaurant's menu
+var selectedDishes = [];
+
 // Reference to current menu of restaurant user is looking at
 var currentMenu = null;
 
@@ -42,61 +45,73 @@ var mcdonaldsObj = {
         meals: [
             {
                 name: "Big Mac Combo",
-                price: 7.75
+                price: 7.75,
+                fID: "mac"
             },
             {
                 name: "Quarter Pounder Combo",
-                price: 6.50
+                price: 6.50,
+                fID: "02"
             }
         ],
         mains: [
             {
                 name: "Big Mac",
-                price: 5.00
+                price: 5.00,
+                fID: "03"
             },
             {
                 name: "Quarter Pounder",
-                price: 4.50
+                price: 4.50,
+                fID: "04"
             },
             {
                 name: "McChicken",
-                price: 2.50
+                price: 2.50,
+                fID: "05"
             }
         ],
         sides: [
             {
                 name: "Fries",
-                price: 2.00
+                price: 2.00,
+                fID: "06"
             }
         ],
         beverages: [
             {
                 name: "Pepsi",
-                price: 1.00
+                price: 1.00,
+                fID: "07"
             },
             {
                 name: "Coke",
-                price: 1.00
+                price: 1.00,
+                fID: "08"
             }
         ],
         desserts: [
             {
                 name: "Apple Pie",
-                price: 3.50
+                price: 3.50,
+                fID: "09"
             },
             {
                 name: "McFlurry",
-                price: 4.00
+                price: 4.00,
+                fID: "10"
             }
         ],
         specials: [
             {
                 name: "Happy Meal",
-                price: 2.50
+                price: 2.50,
+                fID: "11"
             },
             {
                 name: "Junior Chicken",
-                price: 2.50
+                price: 2.50,
+                fID: "12"
             }
         ]
     }
@@ -1112,7 +1127,8 @@ function insertMenuItems(restMenu) {
     if(displayMeals){
         // Add all meals
         for(dish of restMenu.meals){
-            outputHTML += `<div class=item>`;
+            outputHTML += `<div class=item" `;
+            outputHTML += 'id = foodID>'.replace("foodID", dish.fID);
             outputHTML += `<div class="itemImg">`;
             outputHTML += `<img src="./Images/FoodItemPlaceholder.png" width="70px" height="70px" style="margin-right: 25px;">`;
             outputHTML += `</div>`;
@@ -1121,7 +1137,7 @@ function insertMenuItems(restMenu) {
             outputHTML += `<p class="foodPrice">$${dish.price}</p>`;
             outputHTML += `</div>`;
             outputHTML += `<div class="itemAdd">`;
-            outputHTML += `<button type="button" onclick="">Add to Cart +</button>`;
+            outputHTML += `<button type="button" onclick="addItemToCart('foodIDD')">Add to Cart +</button>`.replace("foodIDD", dish.fID);
             outputHTML += `</div>`;
             outputHTML += `</div>`;
         }
@@ -1272,6 +1288,10 @@ function resetDishDisplay(){
     displayBeverages = true;
     displayDesserts = true;
     displaySpecials = true;
+}
+
+function addItemToCart(dishID) {
+    console.log(dishID);
 }
 // js for cart page below
 
