@@ -9,7 +9,7 @@ var rests = document.getElementById("restaurantsPage");
 var menu = document.getElementById("menuPage");
 var cart = document.getElementById("cartPage");
 var head = document.getElementById("mainHeader");
-
+var cartButton = document.getElementById("cartButton");
 var currentPage; 
 
 // Array holding names of selected cuisine preferences
@@ -795,6 +795,7 @@ var qdobaObj = {
 function categoriesPageClick() {
     addr.style.display = "none";
     prefs.style.display = "inline";
+    head.style.display = "block";
     currentPage = prefs;
 }
 
@@ -814,6 +815,7 @@ function resturantsPageClick() {
 function menuPageClick(name) {
     rests.style.display = "none";
     menu.style.display = "inline";
+    cartButton.style.display = "block";
     insertRestaurantInfo(name);
     currentPage = menu;
 }
@@ -825,13 +827,16 @@ function cartClick() {
 }
 
 function prevPage() {
+    console.log(currentPage);
     switch(currentPage) {
+        
         case addr:    
             break;
 
         case prefs:
             prefs.style.display = "none";
             addr.style.display = "inline";
+            head.style.display = "none";
             currentPage = addr;
             break;
 
@@ -844,12 +849,14 @@ function prevPage() {
         case menu:
             menu.style.display = "none";
             rests.style.display = "inline";
+            cartButton.style.display = "none";
             currentPage = rests;
             break;
     
         case cart:
             cart.style.display = "none";
-            menu.style.display = "inline"
+            menu.style.display = "inline";
+            cartButton.style.display = "block";
             currentPage = menu;
             break;
         default:
