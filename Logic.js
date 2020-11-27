@@ -1180,7 +1180,8 @@ function insertRestaurantInfo(restName) {
 
     // Call a function to insert the restaurants menu
     resetDishDisplay();
-
+    window.scrollTo(0,0);
+    
     insertMenuItems(currentMenu);
 }
 
