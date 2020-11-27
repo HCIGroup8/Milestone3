@@ -41,8 +41,8 @@ header {
   font-size: larger;
 }
 
-#backbtn:hover {
-  color: black;
+#backBtn:hover {
+  color: blue;
  
 }
 
@@ -169,7 +169,7 @@ instruction{
   border-color: black;
   border-style: solid;
   border-width: 2px;
-  margin-left: 212px;
+  margin-left: 140px;
   height: 58px;
   width: 5%;
   font-size: larger;
