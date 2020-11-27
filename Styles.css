@@ -42,8 +42,7 @@ header {
 }
 
 #backbtn:hover {
-  color: black;
- 
+  background-color: #d0320b;
 }
 
 
@@ -71,7 +70,7 @@ instruction{
     box-sizing: border-box;
   }
   
-  form.example input[type=text] {
+  form.addrInput input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px black;
@@ -80,7 +79,7 @@ instruction{
     background: #f1f1f1;
   }
   
-  form.example button {
+  form.addrInput button {
     float: left;
     width: 20%;
     padding: 10px;
@@ -92,7 +91,7 @@ instruction{
     cursor: pointer;
   }
   
-  form.example button:hover {
+  form.addrInput button:hover {
     background: #f99201;
   }  
 /* yunji edit above */
@@ -169,7 +168,7 @@ instruction{
   border-color: black;
   border-style: solid;
   border-width: 2px;
-  margin-left: 212px;
+  margin-left: 190px;
   height: 58px;
   width: 5%;
   font-size: larger;
@@ -296,12 +295,12 @@ instruction{
 
 
 .vertical-menu button {
-  background-color: white; /* Grey background color */
-  color: black; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  border: 1px solid black; /* Green border */
-  text-decoration: none; /* Remove underline from links */
+  background-color: white;
+  color: black; 
+  display: block; 
+  padding: 12px; 
+  border: 1px solid black;
+  text-decoration: none; 
   width: 80%;
   height: 100px;
   margin-left: 10%;
@@ -316,14 +315,14 @@ instruction{
 }
 
 .vertical-menu button:hover {
-  background-color: #f3ad4b; /* Dark grey background on mouse-over */
+  background-color: #f3ad4b; 
 }
 
 .vertical-menu a.active {
-  background-color: #f99201; /* Add a green color to the "active/current" link */
+  background-color: #f99201; 
   color: white;
 }
-/* Add a background color on hover */
+
 .btn-group button:hover {
   background-color: #ffc400;
 }
@@ -368,8 +367,7 @@ instruction{
 #RestaurantSaying {
   position: fixed;
   top: 80px;
-  left: 850px;
-  /*width: 20%;*/
+  left: 820px;
   height: 100px;
   font-size: x-large;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -476,11 +474,9 @@ instruction{
 }
 /*END MENU CSS*/
 
-/* End Josh CSS */
 
 
-/* css for cartPage */
-
+/* BEGIN CART CSS*/
 .headCart {
   display: fixed;
   margin-top: 40px;
@@ -664,12 +660,6 @@ instruction{
 
   }
 
-    
- /* .paymentList {
-      width: 100%;
-      height:100%;
-  }*/
-    
 
   #checkOut{
     margin-left: 20%;
@@ -734,29 +724,5 @@ instruction{
     background-color:#d7dbd7;
 }
 
-/*#creditInfobutton{
-    margin-top: 7%;
-    margin-left: 18%;
-    width:60%;
-    height:50px;
-    font-size:20px;
-    color: white;
-    text-align: center;
-    background-color: #57d168;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px 10px 10px 10px;
-}*/
-/* end css for cartPage*/
 
-
-.dishCustomization {
-  display:none;
-}
-
-.itemName {
-  height: 111px;
-}
-
-
+/* END CART CSS*/
